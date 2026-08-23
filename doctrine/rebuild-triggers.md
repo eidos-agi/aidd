@@ -14,4 +14,6 @@ Time-box it. A vertical slice of the new thesis. If it cannot beat the champion 
 
 If the answer is only “the code is ugly,” let agents refactor targeted seams in the current repo instead.
 
+If the answer is unused surface, prune in place with `/aidd-prune`. A rebuild is not a broom.
+
 A rebuild loses behavior only when you discard the old code before converting its important observable behavior into an executable specification. Freeze the champion as a reference oracle. Then rebuild.

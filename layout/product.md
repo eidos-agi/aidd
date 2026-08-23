@@ -8,14 +8,16 @@ product/
   frontend-testing-standards/
   data-testing-standards/
   validation-personas/
+  simplicity-standards/
 ```
 
 - `ai-users/` defines whether agents and users can achieve valuable goals.
 - `frontend-testing-standards/` defines whether the interaction surface is trustworthy.
 - `data-testing-standards/` defines whether the system’s state, events, pipelines, and derived outputs are trustworthy.
 - `validation-personas/` defines whether AI-produced artifacts are decision-useful, evidenced, and fit for a human reader.
+- `simplicity-standards/` defines whether a feature still earns its existence. Burden, kill conditions, evidence-gated deletion.
 
-`ai-users` are executable users of the product. `validation-personas` are independent graders of what the product writes. Different jobs. Different files.
+`ai-users` are executable users of the product. `validation-personas` are independent graders of what the product writes. `simplicity-standards` are independent graders of whether the product should still carry a thing. Different jobs. Different files.
 
 The product repo holds the contract the agent builds against. A promotion controller may run additional protected tests the candidate cannot see.
 

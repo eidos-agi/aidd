@@ -4,10 +4,10 @@ Aidd has plugins.
 
 Legs are universal. Every product copies them.
 
-Plugins are optional capability packs for a surface, runtime, or judgment domain that the four legs do not fully cover.
+Plugins are optional capability packs for a surface, runtime, or judgment domain that the five legs do not fully cover.
 
 ```
-product/                 # the four legs — always
+product/                 # the five legs — always
 plugins/<id>/            # optional — only when the product needs that surface
 ```
 

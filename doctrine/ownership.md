@@ -18,6 +18,7 @@ Preserve across every rebuild:
 - Decision records explaining which candidate won and why
 - Validation personas, AI-artifact taxonomy, reader-simulation fixtures, and hard gates
 - Plugin contracts, mechanical gates, critic calibration, approved visual corpus, and held-out plugin-evals
+- Feature inventory, kill conditions, deletion proposals, and public-contract tombstones
 
 Do not preserve:
 

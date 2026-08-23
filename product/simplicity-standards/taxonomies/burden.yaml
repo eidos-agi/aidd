@@ -1,0 +1,25 @@
+version: 1
+# What we count. What we do not.
+
+count:
+  nouns: Durable domain concepts a new agent must learn.
+  paths: User-visible journeys and screens.
+  flags: Permanent forks in behavior.
+  state: Durable shapes, events, fields, indexes.
+  contracts: Public APIs, file formats, events others depend on.
+  dependencies: Runtimes, vendors, SDKs taken into the champion.
+  incidents: Failures, support, and exception paths attributed to the surface.
+
+do_not_count_as_gates:
+  loc: Smell. Agents game it.
+  files: Smell.
+  "clean architecture": Taste.
+  prettier names: Taste.
+
+zombie_patterns:
+  - Flag that shipped "temporarily" and is now load-bearing folklore
+  - Settings page that duplicates a job already done elsewhere
+  - Compatibility shim whose last consumer left
+  - Second noun for the same fact
+  - Agent-added "just in case" empty state that became a product
+  - Public field added for one demo tenant

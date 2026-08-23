@@ -14,4 +14,6 @@ Tests that can be rewritten to match the code are not tests. They are documentat
 
 The public sees the major upgrade. The org sees the competition that produced it.
 
-The evals are the company. The code is a candidate.
+The evals are the company. The code is a candidate. The feature is a candidate too.
+
+A smaller generation that holds the jobs and the gates is a promotion. Unused surface is a regression.

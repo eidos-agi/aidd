@@ -4,7 +4,7 @@
 
 ## What This Is
 
-AIDD is the operating model for AI-driven development. Isolated candidates. Frozen evals. Evidence-gated promotion. Implementation is disposable. The oracle is not.
+AIDD is the operating model for AI-driven development. Isolated candidates. Frozen evals. Evidence-gated promotion. Implementation is disposable. The oracle is not. Features are candidates too.
 
 This repo is knowledge. Skills and templates. A product later owns a binary.
 
@@ -18,6 +18,7 @@ This repo is knowledge. Skills and templates. A product later owns a binary.
 | `/aidd-validate` | Grade an AI-produced artifact with an independent panel |
 | `/aidd-plugin` | Add or use a plugin |
 | `/aidd-mac` | Autonomous native Apple UI |
+| `/aidd-prune` | Kill unearned surface |
 
 ## Guardrails
 
@@ -27,11 +28,12 @@ This repo is knowledge. Skills and templates. A product later owns a binary.
 4. Scheduled rewrites are banned. Rebuild on a trigger, not a calendar.
 5. Humans own product, risk, promotion, and the oracle. AI owns generation, search, and mechanical execution.
 6. Tests that can be rewritten to match the code are not tests.
-7. Do not edit `validation-personas/`, plugin gates, or `product-evals/` in the same run that authors the artifact.
+7. Do not edit `validation-personas/`, `simplicity-standards/`, plugin gates, or `product-evals/` in the same run that authors the artifact.
+8. The builder does not grade its own deletions.
 
 ## Layout
 
-Copy the four legs into a product repo:
+Copy the five legs into a product repo:
 
 ```
 product/
@@ -39,6 +41,7 @@ product/
   frontend-testing-standards/
   data-testing-standards/
   validation-personas/
+  simplicity-standards/
 ```
 
 Keep evals outside the candidate:

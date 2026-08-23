@@ -1,0 +1,23 @@
+id: example-feature
+name: Example feature
+job: operator.example-job          # must exist in product/ai-users
+status: live                       # live | sunset | tombstone
+added_generation: gen-NNN
+owner: product
+
+why_it_exists: >
+  One sentence. The job this earns. Not "users might want it."
+
+burden:
+  nouns: []
+  paths: []
+  flags: []
+  state: []
+  contracts: []
+  dependencies: []
+
+kill_condition: >
+  The evidence that would delete this. Date, usage floor, superseded-by,
+  or incident cost. If you cannot write this, do not add the feature.
+
+superseded_by: null

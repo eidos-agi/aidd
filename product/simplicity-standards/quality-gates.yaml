@@ -1,0 +1,31 @@
+version: 1
+hard_gates:
+  - id: declared-surface
+    requirement: "Every user-visible path, flag, public contract, and durable noun is in the inventory."
+  - id: job-backed
+    requirement: "Every live feature maps to at least one ai-users job. Features that exist for completeness, symmetry, or agent habit fail."
+  - id: kill-condition
+    requirement: "Every live feature names the evidence that would delete it."
+  - id: remaining-jobs
+    requirement: "A deletion candidate still completes every remaining ai-users job."
+  - id: remaining-gates
+    requirement: "A deletion candidate still passes frontend, data, and validation hard gates for what remains."
+  - id: no-silent-contract
+    requirement: "Public APIs, events, and file formats are versioned or explicitly sunset. No silent break."
+  - id: evidence-to-kill
+    requirement: "Deletion cites telemetry, superseded-by, incident cost, or an owner declaration. Taste is not evidence."
+  - id: inventory-integrity
+    requirement: "The candidate did not edit simplicity-standards or hide inventory entries in the same run that authored the change."
+
+soft_score:
+  weights:
+    job_coverage: 0.35
+    conceptual_nouns: 0.15
+    user_visible_paths: 0.15
+    flags_and_forks: 0.10
+    durable_state: 0.10
+    public_contracts: 0.10
+    dependency_burden: 0.05
+  primary_constraint: Named burden. Do not hide a new noun behind a green suite.
+  rule: A high soft score never overrides a hard-gate miss.
+  loc: smell, not a gate

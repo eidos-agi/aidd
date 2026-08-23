@@ -1,0 +1,30 @@
+version: 1
+evaluator: product-evals
+held_out: true
+promotion_policy: hold-jobs-reduce-burden
+
+promote_if:
+  - All remaining ai-users jobs pass
+  - All other-leg hard gates pass
+  - Burden is strictly lower on a named dimension, or an addition pays the tax
+  - No undeclared surface
+  - Public-contract sunsets are human-signed
+  - Human signed the promotion record
+
+reject_if:
+  - Any remaining job fails
+  - Silent public-contract break
+  - Deletion without evidence
+  - Addition without job or kill condition
+  - Candidate mutated the inventory to hide surface
+  - The only improvement is fewer lines of code
+  - Human did not sign
+
+tie: champion
+# Exception: remaining jobs hold and named burden drops. That is not a tie.
+
+record:
+  - run-manifest.yaml
+  - inventory diff
+  - deletion-proposal or addition-tax
+  - remaining job results

@@ -1,0 +1,28 @@
+id: kill-example-feature
+kind: deletion-proposal
+feature: example-feature
+candidate: gen-NNN
+
+evidence:
+  kind: telemetry | superseded-by | incident-cost | owner-declaration
+  summary: >
+    Why this no longer earns a job.
+
+remaining_jobs:
+  - operator.other-job
+
+must_still_pass:
+  - All remaining ai-users jobs
+  - frontend-testing-standards hard gates
+  - data-testing-standards hard gates
+  - validation-personas hard gates if artifacts remain
+
+public_contract:
+  breaks: false
+  sunset: null
+  human_signature_required: false
+
+rollback: >
+  How to put it back if the evidence was wrong. Tombstone beats amnesia.
+
+# Taste is not evidence. "The settings page is ugly" is a critic finding, not a kill.

@@ -1,0 +1,25 @@
+id: add-example-feature
+kind: addition-tax
+feature: example-feature
+
+pays:
+  job: operator.example-job
+  kill_condition: written
+  burden_named: true
+
+cost:
+  nouns_added: 1
+  paths_added: 1
+  flags_added: 0
+  state_added: 1
+  contracts_added: 0
+  dependencies_added: 0
+
+justification: >
+  This job cannot be completed with existing surface. Name the gap.
+
+reject_if:
+  - Job already completed by a live feature
+  - Kill condition missing
+  - "Might be useful later"
+  - Symmetry with an existing screen

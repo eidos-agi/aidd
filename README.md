@@ -17,9 +17,9 @@ A linear sequence of `product-v1`, `product-v2`, `product-v3` assumes every succ
 Use champion–challenger:
 
 ```
-                     ┌── candidate A ──┐
-product (champion) ──┼── candidate B ──┼── evaluation ──> next champion
-                     └── candidate C ──┘
+                     ┌── candidate A (add)     ──┐
+product (champion) ──┼── candidate B (same)    ──┼── evaluation ──> next champion
+                     └── candidate C (smaller) ──┘
 ```
 
 The public sees the major upgrade. The org sees the competition that produced it.
@@ -28,13 +28,13 @@ The public sees the major upgrade. The org sees the competition that produced it
 
 1. Code is a byproduct of intent, oracles, and fitness.
 2. A rebuild is a new generation, not a confession.
-3. Promotion is evidence-gated. Ties stay with the champion.
+3. Promotion is evidence-gated. Ties stay with the champion. A smaller candidate that holds the jobs is not a tie.
 4. Tests that can be rewritten to match the code are not tests.
 5. Humans own product, risk, promotion, and the oracle. AI owns generation, search, and mechanical execution.
 
-See [doctrine/principles.md](doctrine/principles.md).
+See [doctrine/principles.md](doctrine/principles.md) and [doctrine/features-are-candidates.md](doctrine/features-are-candidates.md).
 
-## The four legs
+## The five legs
 
 Every product repo carries:
 
@@ -44,22 +44,24 @@ product/
   frontend-testing-standards/
   data-testing-standards/
   validation-personas/
+  simplicity-standards/
 ```
 
 - **ai-users** — personas as executable users. Goals, jobs, failure modes, acceptance.
 - **frontend-testing-standards** — journeys, accessibility, visual states, interaction contracts.
 - **data-testing-standards** — policy, contracts, fixtures, oracles, replay.
 - **validation-personas** — independent reviewers of AI-produced artifacts. Decision usefulness, evidence, human reading, AI-isms.
+- **simplicity-standards** — features are candidates. Burden, kill conditions, evidence-gated deletion.
 
-`ai-users` test whether a person can finish a job in the product. `validation-personas` test whether an artifact the product produced is fit for a real reader. Do not collapse them.
+`ai-users` test whether a person can finish a job in the product. `validation-personas` test whether an artifact the product produced is fit for a real reader. `simplicity-standards` test whether a feature still earns its existence. Do not collapse them.
 
-For autonomous rebuilds, data standards are often the most important of the three operational legs. A regenerated UI can look great while the system silently duplicates records. When the product *writes* for humans — memos, case studies, briefs — validation-personas is the fourth gate.
+For autonomous rebuilds, data standards are often the most important of the operational legs. A regenerated UI can look great while the system silently duplicates records. When the product *writes* for humans — memos, case studies, briefs — validation-personas is the gate. When the product only grows, simplicity-standards is the gate. Aidd without it is an accumulation engine.
 
 ## Plugins
 
 Aidd has plugins. Legs are universal. Plugins are optional.
 
-A plugin is a capability pack for a surface the four legs do not fully cover. It may extend a leg. It may not weaken one.
+A plugin is a capability pack for a surface the five legs do not fully cover. It may extend a leg. It may not weaken one.
 
 ```
 plugins/
@@ -94,6 +96,7 @@ Do not name an active rewrite `product-v2` until v2 is a settled external contra
 | `/aidd-validate` | Grade an AI-produced artifact with an independent panel |
 | `/aidd-plugin` | Add or use a plugin. Do not invent one to rename a leg |
 | `/aidd-mac` | Autonomous native Apple UI: test, explore, inspect, critique |
+| `/aidd-prune` | Kill unearned surface. Smaller and holding is a promotion |
 
 ## Guardrails
 
@@ -104,6 +107,7 @@ Do not name an active rewrite `product-v2` until v2 is a settled external contra
 5. Human sign-off is a gate, not a courtesy.
 6. The generator does not choose, edit, or weaken the validation panel in the same run.
 7. The builder does not approve its own UI. Plugin critics are part of the oracle.
+8. The builder does not grade its own deletions. A feature without a job and a kill condition is undeclared surface.
 
 ## Related
 

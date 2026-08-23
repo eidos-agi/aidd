@@ -1,0 +1,30 @@
+version: 1
+owner: simplicity-standards
+
+rule: A high feature-count never overrides a lost job. A held job never excuses undeclared surface.
+
+every_feature:
+  must_name:
+    - id
+    - job                # an ai-users persona job
+    - burden
+    - kill_condition
+    - status             # live | sunset | tombstone
+  undeclared: fail
+
+pass:
+  - Inventory covers all user-visible paths, flags, public contracts, and durable nouns
+  - Every live feature maps to at least one ai-users job
+  - Additions include a kill condition
+  - Deletions have a proposal and remaining jobs pass
+  - Public-contract sunsets are signed
+
+fail:
+  - Feature with no job
+  - Addition without a kill condition
+  - Silent break of a public contract
+  - Deletion that drops a remaining job
+  - Candidate edited the inventory to hide surface in the same run
+  - "We'll clean it up later"
+
+prune_before_rebuild: true

@@ -1,0 +1,23 @@
+version: 1
+# Copy into the product repo. Fill it. Keep it honest.
+# Features not listed are undeclared surface.
+
+features:
+  - id: example-export
+    name: CSV export
+    job: operator.export-records
+    status: live
+    added_generation: gen-004
+    burden:
+      nouns: [ExportJob]
+      paths: [settings/export]
+      flags: []
+      state: [export_jobs]
+      contracts: [GET /exports]
+      dependencies: []
+    last_evidence:
+      kind: telemetry
+      note: "12 paying tenants used this in the last 30 days"
+    kill_condition: >
+      No paying tenant used export in 90 days, and operator.export-records
+      can be fulfilled by the existing API without this path.
