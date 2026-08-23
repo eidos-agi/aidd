@@ -1,10 +1,11 @@
-generation: gen-015
-base_champion: gen-014
-thesis: "Evented runtime. Same contracts, cheaper replay, lower p95."
-candidate_ref: org/product-candidates/gen-015
+generation: aidd-v1
+repo: eidos-agi/aidd-v1
+base_champion: eidos-agi/aidd
+thesis: "First bounded bash of AIDD. Versioned generation repos. Field evals as teeth."
+candidate_ref: eidos-agi/aidd-v1
 evaluator:
-  repo: org/product-evals
-  version: evals-0.12.0
+  repo: eidos-agi/aidd
+  version: main
   held_out: true
 agent:
   model: unrecorded
@@ -18,6 +19,8 @@ metrics:
   latency: null
   safety: null
   fitness: null
+  pass_hat_k: null
+  evo_score: null
 hard_gates:
   tenant-isolation: pending
   idempotent-writes: pending
@@ -25,6 +28,8 @@ hard_gates:
   append-only-audit: pending
   replay-equivalence: pending
   schema-compatibility: pending
+  held-out-isolation: pending
+  eval-teeth: pending
 decision: pending
 signed_by: null
-notes: Score against the frozen bundle. Do not edit the scorer.
+notes: Score against the frozen champion. Do not edit the scorer. Do not bash in aidd.

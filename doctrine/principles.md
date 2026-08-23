@@ -2,7 +2,7 @@
 
 Code is a byproduct of intent, oracles, and fitness.
 
-A rebuild is a new generation, not a confession.
+A rebuild is a new generation repo, not a confession. The generation is `product-vN`. The public name stays `product`.
 
 Promotion is evidence-gated. A new generation must beat the current champion on the same tests, the same corpus, and the same scorer. Ties stay with the champion.
 
@@ -17,3 +17,7 @@ The public sees the major upgrade. The org sees the competition that produced it
 The evals are the company. The code is a candidate. The feature is a candidate too.
 
 A smaller generation that holds the jobs and the gates is a promotion. Unused surface is a regression.
+
+Verifiability sets the automation ceiling. What you cannot check, a human still owns.
+
+Do not bash in the champion.

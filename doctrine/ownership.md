@@ -5,9 +5,11 @@
 | Human | Product. Risk. Promotion. The oracle. |
 | AI | Generation. Search. Mechanical execution. |
 
-The evaluator lives outside the candidate. Preferably a separate repository or a locked CI artifact. If the same agent can change both candidate and acceptance suite in a single run, it can win by weakening tests.
+The evaluator lives in the champion. Preferably the public `product` repo, or a locked `product-evals` sibling. Generation repos (`product-vN`) may read public contracts. They may not edit held-out fixtures, reconciliation totals, cross-tenant probes, critic calibration, or quality thresholds.
 
-Preserve across every rebuild:
+If the same agent can change both candidate and acceptance suite in a single run, it can win by weakening tests.
+
+Preserve across every rebuild — in the champion, not in `product-vN`:
 
 - Versioned task and scenario corpus
 - Gold outputs and machine-checkable invariants
@@ -29,4 +31,4 @@ Do not preserve:
 - Prompts and execution topology
 - CI layout and deployment wiring
 
-Those are candidates.
+Those are candidates. They live in `product-vN` until a winner is pushed back to `product`.

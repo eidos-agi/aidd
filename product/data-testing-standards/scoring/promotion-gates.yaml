@@ -1,19 +1,33 @@
-version: 1
-evaluator: product-evals
+version: 2
+evaluator: eidos-agi/aidd
 held_out: true
 promote_if:
   - All hard gates pass
   - Primary fitness beats the champion
+  - pass^k independent greens
   - No material regression on cost, latency, safety, reliability
+  - Future-weighted fitness does not poison the next generation
   - Intentional differences are documented and accepted
   - Human signed the promotion record
 reject_if:
   - Any hard gate fails
   - Fitness is a tie or a loss
-  - Candidate mutated product-evals
+  - Candidate mutated champion evals
+  - Builder could read held-out cases
+  - Suite stayed green under planted mutation
   - Human did not sign
 tie: champion
+hard_gates:
+  - tenant-isolation
+  - idempotent-writes
+  - referential-integrity
+  - append-only-audit
+  - replay-equivalence
+  - schema-compatibility
+  - held-out-isolation
+  - eval-teeth
 record:
   - run-manifest.yaml
   - scorecard
-  - novel failures converted to fixtures
+  - novel failures converted to fixtures in the champion
+  - GENERATION.md result
