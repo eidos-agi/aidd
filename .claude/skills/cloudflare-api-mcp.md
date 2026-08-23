@@ -1,31 +1,42 @@
 # /cloudflare-api-mcp
 
-Operate Cloudflare through Code Mode. Do not guess endpoints.
+Operate Cloudflare through Code Mode. Do not guess endpoints. Do not ask for a token.
 
-Three tools, in this order:
+If the session has no `cloudflare_mcp___*` tools, stop. The Grok toggle can be on while this chat has none. Retry search once.
 
-1. `cloudflare_mcp___docs` — product question (Pages vs Workers, limits).
-2. `cloudflare_mcp___search` — walk `spec.paths` for the verb and schema.
-3. `cloudflare_mcp___execute` — only after the path exists. `code` is an async arrow function. `accountId` is already scoped. Do not ask for a token. Do not print secrets.
+Three tools, argument names matter:
+
+| Tool | Args |
+| --- | --- |
+| `cloudflare_mcp___docs` | `{ query }` |
+| `cloudflare_mcp___search` | `{ code }` — walk `spec.paths`. **Not `query`.** |
+| `cloudflare_mcp___execute` | `{ code }` — async arrow function. `accountId` is scoped. |
+
+Order: docs or search, then execute. Slim every execute return to `success`, `errors`, ids/names. Full Pages/zone objects truncate and hide failures.
 
 ```js
 async () => {
-  return cloudflare.request({
+  const r = await cloudflare.request({
     method: "GET",
     path: `/accounts/${accountId}/pages/projects`,
   });
+  return { success: r.success, errors: r.errors, names: (r.result || []).map(p => p.name) };
 }
 ```
 
-Always:
+Decide owner first. Two hostnames = two properties.
 
-1. List before create.
-2. Two hostnames = two properties. Not one worker that inspects `Host`.
-3. One owner per hostname. Pages custom domain and Worker custom domain must not share a name.
-4. Empty Pages is a 404. Put content on the thing that owns the hostname.
-5. Verify after write.
-6. Do not touch apex `eidosagi.com` unless asked.
+| Need | Owner |
+| --- | --- |
+| Git-deployed site | Pages project, then Pages domain |
+| First live HTML | Worker script, then Worker domain |
 
-Docs sites: two Pages **or** two Workers. Workers custom domain is `PUT /accounts/{id}/workers/domains` with `{ hostname, service, zone_id }`. That creates orange-cloud `AAAA 100::`.
+One owner per hostname. Do not attach a Pages custom domain and a Worker custom domain to the same name. If you already did, delete the Pages domain. Empty Pages is a 404.
 
-Zone `eidosagi.com` is already on this account. Live now: `aidd.eidosagi.com` (`aidd-site`), `evolution.eidosagi.com` (`evolution-site`).
+Worker script names collide with Pages project names. Live AIDD: `aidd-site` → `aidd.eidosagi.com`, `evolution-site` → `evolution.eidosagi.com`. Pages projects `aidd` / `aidd-evolution` exist without those custom domains. Do not name a Worker `aidd`.
+
+Always: list before create. Verify after write. Do not touch apex `eidosagi.com`.
+
+Workers custom domain: `PUT /accounts/{id}/workers/domains` `{ hostname, service, zone_id }`. Zone `eidosagi.com` is `b5a4622089401a8e7cf27ff3da9b1e65`. That creates orange-cloud `AAAA 100::`. workers.dev is `{name}.eidos-agi.workers.dev`.
+
+A Worker PUT of HTML is a first live site. It is not the Git deploy. Source stays in Git.
