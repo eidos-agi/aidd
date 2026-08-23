@@ -1,31 +1,31 @@
 # Org layout
 
-One public canonical product. Versioned generation repos. Evals in the champion.
+`product` is the latest copy of the winner. Generations are sibling repos. Promote by copying.
 
 ```
 github.com/<org>/
-  product/                 # champion. what the public sees. evals live here.
-  product-v1/              # generation 1. AI bashes a version here.
-  product-v2/              # generation 2. clean slate against frozen evals.
-  product-v3/              # ...
-  product-evals/           # optional. only if evals are not already in product/
+  product/                 # latest promoted copy. public. overwritten on promote.
+  product-v1/              # generation 1. AI bashes here.
+  product-v2/              # generation 2. next evolution.
+  product-v3/              # generation 3. next evolution.
 ```
 
 AIDD applied to itself:
 
 ```
 github.com/eidos-agi/
-  aidd/                    # champion
+  aidd/                    # latest copy of the winner
   aidd-v1/                 # generation 1
-  aidd-v2/                 # not opened until a trigger fires
+  aidd-v2/                 # generation 2
+  aidd-v3/                 # generation 3
 ```
 
-`product-v2` is a challenger, not a successor. It can lose. Do not assume the higher number is better. That is ceremony, not search.
+`aidd` is not a champion. It is a pointer. The generation that last won is sitting there as a snapshot.
 
-You may open concurrent theses (`product-v2`, `product-v2-smaller`) when search needs it. Record a run manifest: base champion, prompts, agent/model versions, tool permissions, environment digest, evaluator version, metrics, promotion decision.
+`product-v2` is a generation, not a successor. It can lose. If it loses, `product` still holds `v1` (or whoever last won). The public name never becomes `product-v2`.
 
-Candidates may read the public contract in `product/`. They may not edit held-out fixtures, reconciliation totals, cross-tenant probes, or quality thresholds.
+Evals live in the generation and copy forward. They arrive in `product` only because they were part of the winner. The next `vN` copies them out of the current latest and must beat them. Do not weaken them.
 
-When a challenger wins, push it back to `product`. Tag the outgoing champion (`legacy-v1-final`). Archive the generation repo once it has no unique value. The public sees the upgrade. The org keeps the generations.
+When a generation wins: copy `product-vN` → `product`. Tag the previous snapshot (`legacy-v1`). Keep `product-vN` as history. Do not delete a miss.
 
-Do not bash in the champion. The champion is what runs and what grades.
+Do not bash in `product`. It will be overwritten.

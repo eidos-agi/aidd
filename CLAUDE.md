@@ -2,68 +2,38 @@
 
 > The evals are the company. The code is a candidate.
 
-## What This Is
+This repo is the latest promoted copy. It is not a workspace. It will be overwritten.
 
-AIDD is the operating model for AI-driven development. Isolated generation repos. Frozen evals. Evidence-gated promotion. Implementation is disposable. The oracle is not. Features are candidates too.
-
-This repo is the champion. Knowledge and templates. A product later owns a binary.
-
-Generations are sibling repos: `aidd-v1`, `aidd-v2`. Do not bash here.
+Work happens in `aidd-v1`, `aidd-v2`, `aidd-v3`. Promote by copying the winner here.
 
 ## Skills
 
 | Skill | What it does |
 |---|---|
 | `/aidd` | The method |
-| `/aidd-rebuild` | Open `product-vN` against frozen evals |
-| `/aidd-promote` | Score a generation. Promote only on evidence. Push back to the champion |
-| `/aidd-validate` | Grade an AI-produced artifact with an independent panel |
+| `/aidd-rebuild` | Open or continue `product-vN` |
+| `/aidd-promote` | Score a generation. If it wins, copy it onto `product` |
+| `/aidd-validate` | Independent panel |
 | `/aidd-plugin` | Add or use a plugin |
-| `/aidd-mac` | Autonomous macOS desktop UI |
-| `/aidd-iphone` | Autonomous iPhone UI |
-| `/aidd-ipad` | Autonomous iPad UI |
-| `/aidd-next` | Autonomous Next.js + shadcn |
+| `/aidd-mac` `/aidd-iphone` `/aidd-ipad` `/aidd-next` | Surface packs |
 | `/aidd-prune` | Kill unearned surface |
 
 ## Guardrails
 
-1. A candidate must not redefine its own grading rubric.
-2. Hard gates cannot be averaged away. A high score does not hide a tenant leak or a buried recommendation.
-3. Failures become fixtures in the champion before the next generation.
-4. Scheduled rewrites are banned. Rebuild on a trigger. The trigger opens `product-vN`.
-5. Humans own product, risk, promotion, and the oracle. AI owns generation, search, and mechanical execution.
-6. Tests that can be rewritten to match the code are not tests.
-7. Do not edit `validation-personas/`, `simplicity-standards/`, plugin gates, or held-out evals in the same run that authors the artifact.
-8. The builder does not grade its own deletions.
-9. A public eval the builder can see is not held-out.
+1. Do not bash here. Bash in `aidd-vN`.
+2. A candidate must not redefine its own grading rubric.
+3. Hard gates cannot be averaged away.
+4. Failures become fixtures before the next generation.
+5. Scheduled rewrites are banned. Open `vN` on a trigger.
+6. Humans own promotion. AI does not copy back.
+7. Evals copy forward with the generation. Do not weaken what arrived.
 
 ## Layout
 
-Copy the five legs into a product champion:
-
 ```
-product/
-  ai-users/
-  frontend-testing-standards/
-  data-testing-standards/
-  validation-personas/
-  simplicity-standards/
+github.com/eidos-agi/
+  aidd/       # latest copy
+  aidd-v1/    # generation 1
+  aidd-v2/    # generation 2
+  aidd-v3/    # generation 3
 ```
-
-Keep generations in sibling repos:
-
-```
-github.com/<org>/
-  product/            # champion. evals live here.
-  product-v1/
-  product-v2/
-```
-
-If the product has a native Apple surface, copy the matching plugin: `mac-desktop`, `iphone`, `ipad`. If it is Next.js + shadcn, copy `nextjs-shadcn`. A green suite on one is inadmissible on the others. The builder does not approve its own UI.
-
-## Related Forges
-
-- **testr / shipr** — record the run
-- **lessons.md** — keep what execution taught
-- **story-forge** — listeners are the reward
-- **forge-forge** — this forge is registered there
