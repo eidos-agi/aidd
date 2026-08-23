@@ -1,11 +1,14 @@
 # Generations
 
-`aidd` is the latest copy of the winner. Work is in `aidd-vN`.
+Tracked in [`eidos-agi/aidd-evolution`](https://github.com/eidos-agi/aidd-evolution).
 
-| Repo | Status | Role |
+`aidd` is the latest copy of the winner. v1 is a snapshot of what exists. v2 is a reimagination — AIDD applied to AIDD.
+
+| Repo | Role | Status |
 | --- | --- | --- |
-| [`aidd-v1`](https://github.com/eidos-agi/aidd-v1) | working | Generation 1 |
-| [`aidd-v2`](https://github.com/eidos-agi/aidd-v2) | not started | Generation 2 |
-| [`aidd-v3`](https://github.com/eidos-agi/aidd-v3) | not started | Generation 3 |
+| [`aidd-v1`](https://github.com/eidos-agi/aidd-v1) | Snapshot of existing `aidd` | snapshot pending |
+| [`aidd-v2`](https://github.com/eidos-agi/aidd-v2) | Reimagination | not started |
+| [`aidd-v3`](https://github.com/eidos-agi/aidd-v3) | Next reimagination | not started |
+| [`aidd-evolution`](https://github.com/eidos-agi/aidd-evolution) | Ledger | open |
 
-Promote by copying a winning `vN` onto `aidd`. See [layout/generations.md](../layout/generations.md).
+See [model.md](https://github.com/eidos-agi/aidd-evolution/blob/main/model.md) and [EVOLUTION.md](https://github.com/eidos-agi/aidd-evolution/blob/main/EVOLUTION.md).
