@@ -1,0 +1,38 @@
+id: example-reviewer
+title: Example reviewer
+kind: validation-persona
+# Distinct from product/ai-users personas. Those are executable users of the product.
+# These are independent graders of an artifact the product produced.
+
+purpose: >
+  One sentence. The question this reviewer is paid to answer.
+
+authority:
+  can_block:
+    - The failure this persona is allowed to stop a promotion for
+  cannot_block:
+    - The disputes it must escalate rather than decide
+
+blind_spots:
+  - What it will miss even when it is working
+
+evaluation_context:
+  reading_time_seconds: 180
+  target_reader:
+    seniority: executive
+    domain_familiarity: moderate
+    attention_budget: limited
+
+required_outputs:
+  - verdict
+  - blocking_issues
+  - decision_relevance
+  - recommended_revision
+
+justification:
+  repo_evidence: []
+  research_packet: null
+  product_owner_decision: null
+
+# Do not generate this persona from a stereotype.
+# Require at least one of: repo evidence, research packet, owner decision.

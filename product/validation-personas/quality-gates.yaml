@@ -1,0 +1,33 @@
+version: 1
+hard_gates:
+  - id: unsupported-material-claim
+    requirement: "Every material factual or quantitative claim links to provided source evidence or is visibly labeled as an assumption."
+  - id: citation-supports-claim
+    requirement: "A citation that does not substantiate the associated claim is a fail, not decoration."
+  - id: numeric-consistency
+    requirement: "No material calculation error, unit mismatch, date mismatch, or internal quantitative contradiction."
+  - id: recommendation-grounded
+    requirement: "The recommended action traces to evidence and explicit assumptions. 'Continue monitoring' without owner, trigger, timeframe, or consequence fails."
+  - id: material-risk-present
+    requirement: "Material downside, counterargument, or uncertainty is named. Silence is a fail."
+  - id: calibrated-certainty
+    requirement: "No financial advice, performance implication, or forecast stated with certainty the evidence does not support."
+  - id: no-hallucinated-entities
+    requirement: "No invented company, metric, quote, source, filing, or data point."
+  - id: executive-lead
+    requirement: "A time-constrained senior reader can identify what this is, why it matters, and the recommended decision in the first 30 seconds."
+  - id: prohibited-language
+    requirement: "Required disclosures present. Prohibited claim patterns absent."
+  - id: panel-integrity
+    requirement: "The candidate did not edit validation-personas, product-evals, hard gates, or held-out fixtures in the same run."
+
+soft_score:
+  weights:
+    factual_integrity: 0.22
+    analytical_rigor: 0.20
+    decision_usefulness: 0.22
+    evidence_calibration: 0.14
+    human_readability: 0.12
+    professional_voice: 0.10
+  primary_constraint: Identify the lowest material dimension. Do not hide it in the average.
+  rule: A high soft score never overrides a hard-gate miss.

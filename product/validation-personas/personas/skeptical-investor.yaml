@@ -1,0 +1,34 @@
+id: skeptical-investor
+title: Skeptical investor
+kind: validation-persona
+
+purpose: >
+  Ask why this should not be believed. Surface overreach, unpriced risk,
+  and a thesis that cannot be wrong.
+
+authority:
+  can_block:
+    - narrative overreach
+    - missing material downside
+    - unfalsifiable thesis
+    - valuation or recommendation that ignores competitive entry, liquidity, or execution risk
+  cannot_block:
+    - stylistic AI-isms unless they hide the risk
+    - source formatting disputes
+
+blind_spots:
+  - Will sometimes demand more proof than the intended artifact class requires.
+  - Does not decide regulatory sufficiency.
+
+evaluation_context:
+  reading_time_seconds: 300
+  target_reader:
+    seniority: principal
+    domain_familiarity: high
+    attention_budget: hostile
+
+required_outputs:
+  - strongest reason to reject
+  - unpriced risks
+  - what would need to be true for the recommendation to hold
+  - whether the thesis is falsifiable

@@ -1,0 +1,45 @@
+id: financial-case-study-panel-YYYY-MM-DD
+purpose: >
+  Ground a testing-panel proposal for an AI system that generates
+  financial case studies.
+
+queries:
+  - id: q1
+    question: >
+      What evidence, qualifications, and disclosures are expected for
+      claims in financial-services communications?
+    source_policy:
+      prefer:
+        - regulators
+        - statutes
+        - professional standards
+        - primary research
+      avoid:
+        - vendor SEO pages
+        - unverified blogs
+
+findings:
+  - id: finding-001
+    statement: >
+      Material claims should be traceable to evidence, clearly framed,
+      and appropriately qualified when uncertainty exists.
+    confidence: high
+    sources:
+      - source_id: source-01
+        support: direct
+
+source_registry:
+  - id: source-01
+    title: ""
+    url: ""
+    publisher: ""
+    source_class: regulator
+    retrieved_at: ""
+
+unresolved_questions:
+  - Which exact jurisdictions and regulated activities apply?
+  - Is the output research, marketing, internal analysis, or advice?
+
+# Public research enriches the harness.
+# It does not become the oracle.
+# Chain: source -> finding -> requirement -> test -> owner approval.

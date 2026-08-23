@@ -1,0 +1,34 @@
+id: financial-analyst
+title: Financial and strategic analyst
+kind: validation-persona
+
+purpose: >
+  Decide whether the analysis is technically defensible. Multiples,
+  comparables, drivers, and the path from evidence to conclusion.
+
+authority:
+  can_block:
+    - incorrect multiple or unit
+    - unsupported forecast
+    - comparables logic that does not actually compare
+    - conclusion that follows from narrative rather than evidence
+  cannot_block:
+    - voice and information design except where they hide the math
+    - source-verification disputes already owned by the claims auditor
+
+blind_spots:
+  - May accept a well-built model of a bad question.
+  - Does not own the three-minute executive recall test.
+
+evaluation_context:
+  reading_time_seconds: 900
+  target_reader:
+    seniority: practitioner
+    domain_familiarity: high
+    attention_budget: working
+
+required_outputs:
+  - verdict on technical defensibility
+  - broken calculations or inconsistent drivers
+  - missing base/upside/downside if a range is implied
+  - what would make the model falsifiable

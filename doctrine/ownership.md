@@ -16,6 +16,7 @@ Preserve across every rebuild:
 - Security and safety policy tests
 - Cost, latency, reliability telemetry
 - Decision records explaining which candidate won and why
+- Validation personas, AI-artifact taxonomy, reader-simulation fixtures, and hard gates
 
 Do not preserve:
 

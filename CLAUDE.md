@@ -15,25 +15,28 @@ This repo is knowledge. Skills and templates. A product later owns a binary.
 | `/aidd` | The method |
 | `/aidd-rebuild` | Spin a clean-room generation against frozen evals |
 | `/aidd-promote` | Score a challenger. Promote only on evidence |
+| `/aidd-validate` | Grade an AI-produced artifact with an independent panel |
 
 ## Guardrails
 
 1. A candidate must not redefine its own grading rubric.
-2. Hard gates cannot be averaged away. A high score does not hide a tenant leak.
+2. Hard gates cannot be averaged away. A high score does not hide a tenant leak or a buried recommendation.
 3. Failures become fixtures before the next generation.
 4. Scheduled rewrites are banned. Rebuild on a trigger, not a calendar.
 5. Humans own product, risk, promotion, and the oracle. AI owns generation, search, and mechanical execution.
 6. Tests that can be rewritten to match the code are not tests.
+7. Do not edit `validation-personas/` or `product-evals/` in the same run that authors the artifact.
 
 ## Layout
 
-Copy the three legs into a product repo:
+Copy the four legs into a product repo:
 
 ```
 product/
   ai-users/
   frontend-testing-standards/
   data-testing-standards/
+  validation-personas/
 ```
 
 Keep evals outside the candidate:

@@ -12,4 +12,6 @@ A candidate that cannot complete the job, or that completes it by violating a fa
 
 Keep personas small. One job each. When a new failure is discovered in production or in replay, add it here before the next generation.
 
+These are users of the product. Graders of what the product writes live in `../validation-personas/`. Do not mix them.
+
 See `templates/persona.yaml`.

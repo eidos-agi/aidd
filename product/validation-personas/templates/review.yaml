@@ -1,0 +1,30 @@
+review:
+  perspective: skeptical-investor
+  verdict: needs-revision
+  confidence: 0.84
+
+  blocking_issues:
+    - id: risk-001
+      severity: critical
+      claim_ref: claim.market-growth-03
+      finding: >
+        The upside case depends on sustained 18% growth, but the
+        report neither establishes the addressable segment nor explains
+        why growth persists after the stated competitive entry.
+      required_evidence:
+        - segment-level TAM methodology
+        - comparable-company growth analysis
+        - downside sensitivity
+
+  decision_relevance:
+    most_important_missing_answer: >
+      What would need to be true for the proposed valuation to be justified?
+
+  recommended_revision:
+    priority: 1
+    action: >
+      Add a base/upside/downside case and explicitly connect each case
+      to revenue drivers, margin assumptions, valuation sensitivity,
+      and disconfirming evidence.
+
+# Structured output only. Prose without claim_ref is commentary, not a gate.

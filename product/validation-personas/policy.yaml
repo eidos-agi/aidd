@@ -1,0 +1,42 @@
+version: 1
+owner: validation-personas
+artifact_class: decision-support
+mode: independent-review
+
+rule: A high soft score never overrides a hard-gate miss.
+
+pass:
+  - All hard gates green
+  - Executive-reader simulation meets recall thresholds
+  - Primary constraint is named, not averaged away
+  - Top remediations, if any, have acceptance tests
+
+fail:
+  - Any hard gate miss
+  - Recommendation not recoverable in the executive reading window
+  - Material claim presented as fact without evidence or an assumption label
+  - Candidate mutated this folder or product-evals
+
+research:
+  required_for:
+    - regulated-domain personas
+    - new artifact types
+  precedence:
+    - Explicit product-owner decisions
+    - Law, regulation, contract, formal policy
+    - This repository's contracts and observed behavior
+    - Owner-curated internal standards and benchmarks
+    - Primary external sources and standards bodies
+    - Practitioner sources
+    - Model prior knowledge
+  public_web_may_not_override: [1, 2, 3, 4]
+
+evolve:
+  auto_rewrite: false
+  propose_only: true
+  human_approval_required:
+    - hard gates
+    - risk policy
+    - held-out fixtures
+    - score thresholds
+    - adding or removing a blocking persona

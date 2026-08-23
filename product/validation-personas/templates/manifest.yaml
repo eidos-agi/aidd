@@ -1,0 +1,37 @@
+version: 1
+tool:
+  name: validation-personas
+  harness_version: 0.1.0
+
+product:
+  contract: ./product-contract.yaml
+  artifact_types:
+    - financial-case-study
+
+panel:
+  mode: independent-review
+  minimum_required_personas:
+    - claims-evidence-auditor
+    - executive-reader
+    - skeptical-investor
+  personas:
+    - ./personas/claims-evidence-auditor.yaml
+    - ./personas/financial-analyst.yaml
+    - ./personas/skeptical-investor.yaml
+    - ./personas/executive-reader.yaml
+    - ./personas/human-centered-editor.yaml
+
+scoring:
+  hard_gates: ./quality-gates.yaml
+  promotion_policy: pareto-improvement
+
+fixtures:
+  development:
+    - ./fixtures/known-good
+    - ./fixtures/known-bad
+  heldout:
+    location: product-evals
+    candidate_writable: false
+
+outputs:
+  report_formats: [json, markdown]

@@ -1,0 +1,28 @@
+version: 1
+# Do not reduce a blocked memo to a single number.
+# After hard gates, score independently and name the constraint.
+
+example:
+  verdict: revise
+  promotion_status: blocked
+  hard_gates: fail
+  failed_gates:
+    - recommendation-grounded
+    - executive-lead
+  dimensions:
+    factual_integrity: 8.8
+    analytical_rigor: 7.1
+    decision_usefulness: 6.4
+    evidence_calibration: 7.8
+    human_readability: 6.1
+    professional_voice: 6.5
+  primary_constraint:
+    category: decision_usefulness
+    explanation: >
+      Useful information is present. A senior reader cannot name the
+      recommended action, the decisive assumptions, or the reversal condition.
+  dissent:
+    - persona: human-centered-editor
+      note: Voice is mostly clean.
+    - persona: skeptical-investor
+      note: Upside case is not falsifiable.

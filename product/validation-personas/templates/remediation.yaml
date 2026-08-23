@@ -1,0 +1,36 @@
+validation_result:
+  verdict: revise
+  promotion_status: blocked
+
+  primary_constraint:
+    category: decision_usefulness
+    explanation: >
+      The study does not connect its market thesis to a decision rule,
+      valuation range, or explicit disconfirming evidence.
+
+  top_actions:
+    - priority: 1
+      impact: critical
+      effort: medium
+      owner: analysis-agent
+      action: >
+        Rewrite the executive summary around a decision statement:
+        recommendation, conviction level, valuation or strategic range,
+        three supporting facts, two risks, and reversal conditions.
+      acceptance_test:
+        - executive-reader recall test passes
+        - recommendation-grounded validator passes
+        - skeptical-investor reviewer marks thesis as falsifiable
+
+    - priority: 2
+      impact: high
+      effort: low
+      owner: editorial-agent
+      action: >
+        Replace generic market narrative with a segment-specific growth
+        mechanism and cite primary or directly relevant evidence.
+      acceptance_test:
+        - generic-thesis score below threshold
+        - claim-evidence alignment at least 0.90
+
+# Output remediations, not vibes. Three to five. Ordered by decision impact.

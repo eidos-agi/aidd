@@ -1,0 +1,27 @@
+version: 1
+evaluator: product-evals
+held_out: true
+promotion_policy: pareto-improvement
+
+promote_if:
+  - All hard gates pass
+  - Decision usefulness beats the champion, or holds while a named secondary improves
+  - No material regression on grounding, readability, cost, latency, or robustness
+  - Held-out fixtures pass
+  - Variance across repeated runs is acceptable
+  - Human signed the promotion record
+
+reject_if:
+  - Any hard gate fails
+  - Fitness is a tie or a loss on the primary constraint
+  - Candidate mutated validation-personas or product-evals
+  - Improvement is shorter prose, prettier voice, or a gamed judge
+  - Human did not sign
+
+tie: champion
+
+record:
+  - run-manifest.yaml
+  - scorecard
+  - panel dissent
+  - novel failures converted to fixtures

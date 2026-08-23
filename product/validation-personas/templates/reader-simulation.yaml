@@ -1,0 +1,31 @@
+id: executive-3min
+profile: investment_committee_member
+available_time_seconds: 180
+windows:
+  first_30_seconds:
+    must_identify:
+      - what this is
+      - why it matters
+      - the recommended decision
+  first_180_seconds:
+    must_be_able_to:
+      - explain the thesis
+      - name two decisive assumptions
+      - name the biggest downside risk
+      - state what new evidence would reverse the conclusion
+
+task:
+  - identify recommendation
+  - name two decisive assumptions
+  - name biggest downside risk
+  - state what new evidence would reverse the conclusion
+
+passing_conditions:
+  recommendation_accuracy_min: 0.95
+  assumption_recall_min: 0.80
+  downside_risk_recall_min: 0.80
+  reversal_condition_recall_min: 0.75
+
+notes:
+  - AI reader simulation is a scalable proxy. Calibrate against human review on high-stakes artifacts.
+  - A memo that only an LLM can "understand" has failed the human experience layer.

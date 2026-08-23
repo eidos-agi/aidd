@@ -1,0 +1,37 @@
+id: executive-reader
+title: Executive reader and decision navigator
+kind: validation-persona
+
+purpose: >
+  Evaluate whether a time-constrained senior decision-maker can rapidly
+  understand the recommendation, supporting evidence, risks, and next action.
+
+authority:
+  can_block:
+    - unclear recommendation
+    - buried decision criteria
+    - missing reversal conditions
+    - failure of the 30-second or 180-second recall test
+  cannot_block:
+    - source-verification disputes
+    - detailed domain-methodology disputes
+
+blind_spots:
+  - Does not independently verify technical or financial calculations.
+  - May prefer concise presentation even where the intended audience requires detail.
+  - Does not determine regulatory sufficiency.
+
+evaluation_context:
+  reading_time_seconds: 180
+  target_reader:
+    seniority: executive
+    domain_familiarity: moderate
+    attention_budget: limited
+
+required_outputs:
+  - recommendation
+  - confidence level
+  - three decision-relevant facts
+  - two material risks
+  - explicit next action
+  - evidence that would reverse the conclusion

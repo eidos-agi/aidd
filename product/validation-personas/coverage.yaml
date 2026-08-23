@@ -1,0 +1,42 @@
+version: 1
+principle: Emit the minimum panel that covers the risk surface. Eight reviewers may be right for an institutional memo. They are excessive for an internal changelog.
+
+dimensions:
+  - id: evidence-integrity
+    question: Does every material assertion trace to adequate evidence?
+    default_persona: claims-evidence-auditor
+  - id: domain-validity
+    question: Are claims and conclusions realistic in the domain?
+    default_persona: financial-analyst
+  - id: rejection-pressure
+    question: What would cause a hostile reader to dismiss it?
+    default_persona: skeptical-investor
+  - id: decision-utility
+    question: Can a senior reader make or advance a decision in the time budget?
+    default_persona: executive-reader
+  - id: human-communication
+    question: Does this read like excellent human professional work?
+    default_persona: human-centered-editor
+
+minimum_required:
+  - claims-evidence-auditor
+  - executive-reader
+  - skeptical-investor
+
+v0_financial_case_study:
+  - claims-evidence-auditor
+  - financial-analyst
+  - skeptical-investor
+  - executive-reader
+  - human-centered-editor
+
+add_when:
+  information-design-critic: Visual hierarchy or skim-path failures keep recurring.
+  compliance-reviewer: Output is client-facing in a regulated activity.
+  domain-practitioner: Operating assumptions keep missing how the industry actually works.
+  best-in-class-benchmarker: The question is category leadership, not mere competence.
+
+do_not:
+  - Duplicate two personas that ask the same question.
+  - Invent a persona from model stereotype without repo evidence or a research packet.
+  - Let the generator choose the panel that grades it.

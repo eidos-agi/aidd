@@ -1,0 +1,47 @@
+version: 1
+# First-class regression corpus. Not a vibe. Not a ban-list.
+# Language fails when it substitutes for analytical work.
+
+ai_artifact_taxonomy:
+  empty-intensifiers:
+    examples:
+      - comprehensive
+      - robust
+      - transformative
+      - compelling
+      - seamless
+      - rapidly evolving
+    rule: Fail when the word stands in for evidence. Pass when it names a tested measure.
+
+  generic-thesis:
+    description: A conclusion that could apply to almost any company or market.
+
+  false-balance:
+    description: Generic pros and cons without an evidence-backed position.
+
+  synthetic-precision:
+    description: Specific numbers or rankings without a traceable method, source, or uncertainty.
+
+  heading-soup:
+    description: Over-sectioning that breaks argument continuity and creates shallow topical coverage.
+
+  conclusion-repetition:
+    description: Restating the same thesis in introduction, body, and conclusion with no new analytical value.
+
+  laundry-list-analysis:
+    description: Enumerating factors rather than showing mechanisms, materiality, or priority.
+
+  inflated-transition:
+    description: Formulaic connective phrases that signal movement but add no logical work.
+
+  citation-theater:
+    description: Sources appear authoritative but do not substantiate the claim they follow.
+
+  vague-recommendation:
+    description: Advice such as "continue monitoring" without ownership, trigger, timeframe, or decision consequence.
+
+  antithesis-tic:
+    description: "It's not X, it's Y" or "not just X, but Y" used as fake insight.
+
+  labeled-bullet-monoculture:
+    description: Almost every bullet is a short noun phrase, separator, then one sentence of elaboration.

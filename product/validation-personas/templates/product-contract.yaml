@@ -1,0 +1,54 @@
+version: 1
+product:
+  name: financial-case-study-app
+  inferred_type:
+    - AI-assisted research
+    - financial case-study generation
+    - decision-support artifact production
+
+artifacts:
+  - id: financial-case-study
+    formats: [markdown, html, pdf]
+    consumers:
+      - institutional buyer
+      - executive sponsor
+      - financial-services practitioner
+    intended_decisions:
+      - evaluate vendor or opportunity
+      - assess strategic relevance
+      - determine next diligence step
+
+inputs:
+  - source packets
+  - structured company data
+  - uploaded research documents
+  - user-provided thesis
+  - financial metrics
+
+risk_surface:
+  - unsupported factual claims
+  - incorrect numerical analysis
+  - fabricated sources
+  - implied financial performance claims
+  - confidential information leakage
+  - overconfident recommendation
+  - generic or non-differentiated analysis
+  - unreadable executive output
+
+quality_dimensions:
+  - factual integrity
+  - evidence grounding
+  - financial and strategic reasoning
+  - reader comprehension
+  - professional voice
+  - visual and information hierarchy
+  - actionability
+  - risk calibration
+
+unknowns:
+  - Which regulatory or internal-compliance policies govern publication?
+  - What external artifact represents category-leading quality?
+  - Are recommendations advisory, informational, or decision-authoritative?
+
+# Discovery fills what the repo can prove.
+# Humans fill unknowns. Do not invent policy.
