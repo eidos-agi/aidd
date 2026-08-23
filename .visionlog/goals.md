@@ -4,14 +4,14 @@ type: "goals"
 date: "2026-08-23"
 ---
 
-## G1 — Products get vN repos
+## G1 — Evolve through vN, copy back
 
-A product using AIDD has a champion (`product`) and generation repos (`product-v1`, `product-v2`). AIDD dogfoods this as `aidd` / `aidd-v1` / `aidd-v2`.
+Work in `aidd-v1`, then `aidd-v2`, then `aidd-v3`. Promote by copying the winner onto `aidd`. The public name never becomes `aidd-v2`.
 
-## G2 — Evals survive the bash
+## G2 — Evals survive the copy
 
-A generation can throw away implementation. It cannot throw away fixtures, held-out cases, or hard gates. Failures become contracts before `vN+1` opens.
+A generation can throw away implementation. It cannot throw away fixtures. They copy forward. `aidd` has them only because the winner brought them.
 
-## G3 — Promotion is a push-back
+## G3 — A higher number is not a successor
 
-The public name never becomes `product-v2`. A winner is pushed into `product`. A loser stays as evidence.
+`v2` can lose. If it loses, `aidd` still shows `v1`.

@@ -1,16 +1,26 @@
 # Evals
 
-The durable asset. Implementation is disposable. This is not.
+The durable asset. They travel with the generation. `product` only has them because a winner brought them.
+
+## They copy forward
+
+```
+v1 evals ──▶ v2 evals ──▶ v3 evals
+                │
+                └── arrive in product as part of the copy
+```
+
+The next generation starts from the evals in the current latest. It may add. It may not weaken.
 
 ## Three corpora
 
 | Corpus | Who may see it | When it runs |
 | --- | --- | --- |
-| Public | Candidates. They will overfit it. | Every bash. |
-| Held-out | Promotion controller only. | Promotion. Never during generation. |
-| Production-shadow | Nobody authors it. The world does. | Before cutover. |
+| Public | The generation. They will overfit it. | Every bash. |
+| Held-out | Promotion only. | Promote. Never during generation. |
+| Production-shadow | Nobody authors it. The world does. | Before copy-back. |
 
-If the builder can read a case, it is public. Do not call it held-out.
+If the builder can read a case, it is public. Do not call it held-out. Do not store held-out only in `product` and hope. Freeze it from the previous generation.
 
 ## Error analysis is the loop
 
@@ -18,33 +28,17 @@ If the builder can read a case, it is public. Do not call it held-out.
 trace or incident
   → minimized reproducible fixture
   → contract / invariant / journey
-  → public or held-out, by sensitivity
-  → every future product-vN must pass it
+  → copied into every later product-vN
 ```
 
 Do not start with infrastructure. Start with a failure you can replay.
 
 ## Teeth
 
-Before you trust a suite, mutate the candidate. If the suite stays green, the suite is not a suite.
-
-Planted bugs the evals must catch:
-
-- tenant leak
-- double write
-- dropped job
-- buried recommendation
-- undeclared surface
-- grader edited by the candidate
+Mutate the candidate. If the suite stays green, the suite is theater.
 
 ## Hard gates cannot be averaged away
 
-A high fitness score does not hide a failed gate. `pass^k`: k independent greens, not one.
+`pass^k`: k independent greens, not one lucky run.
 
-## Future-weighted fitness
-
-Score the generation on whether the next generation is still possible. A candidate that wins today by poisoning tomorrow is a reject. See EvoScore in `doctrine/field.md`.
-
-## Ownership
-
-The champion owns the grader. `product-vN` may read public contracts. It may not edit held-out fixtures, thresholds, critic calibration, or plugin-evals in the same run that authors the candidate.
+A generation that poisons the next generation is a reject. See EvoScore in `doctrine/field.md`.
