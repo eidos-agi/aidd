@@ -1,0 +1,20 @@
+id: payment-retry
+name: Retry after a network timeout
+persona: operator
+steps:
+  - Start a paid action
+  - Lose the network for 42 seconds
+  - Retry the same command with the same idempotency key
+must:
+  - Charge once
+  - Send one receipt
+  - Reconcile a webhook that arrived before the synchronous response
+must_not:
+  - Duplicate fulfillment
+  - Duplicate notification
+  - Leave an order in a state the operator cannot explain
+states:
+  empty: not applicable
+  loading: in-flight indicator, no second submit
+  error: timeout is named, retry is offered
+  success: same confirmation as the non-retry path

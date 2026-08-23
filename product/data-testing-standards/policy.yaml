@@ -1,0 +1,21 @@
+version: 1
+owner: data-standards
+grain: tenant_id + entity_id
+freshness:
+  max_ingestion_lag_seconds: 60
+lineage:
+  required: true
+  fields: [source_system, source_event_id, ingested_at]
+pii:
+  classification: internal
+  prohibited_fields:
+    - raw_access_token
+    - raw_cookie
+    - unredacted_payment_data
+pass:
+  - All hard gates green
+  - No unexplained drift versus champion on replay
+fail:
+  - Any tenant isolation miss
+  - Any duplicate durable side effect on replay
+  - Any prohibited PII field present in an event, trace, or index

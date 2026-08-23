@@ -1,0 +1,19 @@
+version: 1
+evaluator: product-evals
+held_out: true
+promote_if:
+  - All hard gates pass
+  - Primary fitness beats the champion
+  - No material regression on cost, latency, safety, reliability
+  - Intentional differences are documented and accepted
+  - Human signed the promotion record
+reject_if:
+  - Any hard gate fails
+  - Fitness is a tie or a loss
+  - Candidate mutated product-evals
+  - Human did not sign
+tie: champion
+record:
+  - run-manifest.yaml
+  - scorecard
+  - novel failures converted to fixtures

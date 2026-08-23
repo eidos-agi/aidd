@@ -1,0 +1,27 @@
+version: 1
+hard_gates:
+  - id: tenant-isolation
+    requirement: "No query, event, cache lookup, vector retrieval, export, or tool execution may expose cross-tenant data."
+  - id: authorization-derived-data
+    requirement: "Derived state, embeddings, search indexes, caches, and analytics preserve source authorization policy."
+  - id: idempotent-writes
+    requirement: "Replay of a valid command or webhook does not create duplicate durable side effects."
+  - id: referential-integrity
+    requirement: "All required references resolve, or are explicitly modeled as an allowed tombstone/orphan state."
+  - id: append-only-audit
+    requirement: "Security-relevant agent actions, approvals, external writes, and state transitions are attributable and immutable."
+  - id: schema-compatibility
+    requirement: "Schema and event changes are backward-compatible, or include an approved versioned migration."
+  - id: replay-equivalence
+    requirement: "A deterministic replay from the same input, state snapshot, model configuration, and seed produces equivalent authorized state."
+  - id: migration-reversible
+    requirement: "Every destructive migration has a verified backup, rollback, or forward-repair plan."
+soft_score:
+  weights:
+    validity: 0.25
+    freshness: 0.15
+    completeness: 0.2
+    observability: 0.15
+    recovery: 0.15
+    incident_risk: 0.1
+  rule: A high soft score never overrides a hard-gate miss.

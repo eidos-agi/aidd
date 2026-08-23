@@ -1,0 +1,30 @@
+generation: gen-015
+base_champion: gen-014
+thesis: "Evented runtime. Same contracts, cheaper replay, lower p95."
+candidate_ref: org/product-candidates/gen-015
+evaluator:
+  repo: org/product-evals
+  version: evals-0.12.0
+  held_out: true
+agent:
+  model: unrecorded
+  tools: [repo-read, test-runner]
+environment:
+  image_digest: sha256:unrecorded
+metrics:
+  success: null
+  reliability: null
+  cost: null
+  latency: null
+  safety: null
+  fitness: null
+hard_gates:
+  tenant-isolation: pending
+  idempotent-writes: pending
+  referential-integrity: pending
+  append-only-audit: pending
+  replay-equivalence: pending
+  schema-compatibility: pending
+decision: pending
+signed_by: null
+notes: Score against the frozen bundle. Do not edit the scorer.

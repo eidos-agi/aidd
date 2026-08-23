@@ -1,0 +1,33 @@
+name: agent-run
+version: 1
+owner: orchestration
+key:
+  fields: [tenant_id, run_id]
+grain: one run per tenant_id + run_id
+schema:
+  tenant_id: { type: uuid, required: true }
+  run_id: { type: uuid, required: true }
+  status:
+    type: enum
+    values: [queued, running, succeeded, failed, canceled, timed_out]
+    required: true
+  started_at: { type: timestamp, required: true }
+  completed_at: { type: timestamp, required: false }
+  total_cost_usd: { type: decimal, minimum: 0 }
+  tool_calls: { type: integer, minimum: 0 }
+invariants:
+  - "completed_at IS NULL OR completed_at >= started_at"
+  - "status = 'succeeded' implies result_ref IS NOT NULL"
+  - "run_id is unique within tenant_id"
+privacy:
+  classification: internal
+  prohibited_fields:
+    - raw_access_token
+    - raw_cookie
+    - unredacted_payment_data
+compatibility:
+  backward: true
+  breaking_change_requires:
+    - new_entity_version
+    - consumer_migration
+    - replay_validation
