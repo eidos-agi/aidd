@@ -9,7 +9,8 @@ extends:
 sibling_plugins:
   - iphone
   - ipad
-rule_vs_siblings: Passing iPhone or iPad gates does not pass Mac.
+  - nextjs-shadcn
+rule_vs_siblings: Passing iPhone, iPad, or Next.js gates does not pass Mac.
 
 surfaces:
   - macos

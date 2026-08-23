@@ -1,0 +1,41 @@
+version: 1
+tier: 1
+enforcement: blocking
+model_required: false
+surface: nextjs-shadcn
+
+hard_gates:
+  - id: hydration
+    requirement: "No hydration mismatch on any journey in the suite. Console mismatch is a fail."
+  - id: axe-critical
+    requirement: "axe-core serious and critical issues are zero on every journey screen."
+  - id: identifier-stability
+    requirement: "Asserted controls use stable data-slot or data-testid, not hashed CSS class names or visible copy alone."
+  - id: shadcn-interactive
+    requirement: "Interactive controls are shadcn/Radix primitives or registered wrappers. Raw <button>/<a>/<input> for product UI fails."
+  - id: radix-dialog
+    requirement: "Dialog and Sheet trap focus, restore focus, close on Escape, and have an accessible title."
+  - id: labelled-form
+    requirement: "Every input has a visible or accessible label. Errors are bound to the field. Entered data survives validation failure."
+  - id: keyboard-path
+    requirement: "Every critical journey is completable keyboard-only. Focus order is visible (focus-visible ring from tokens)."
+  - id: contrast
+    requirement: "Text and chrome meet the product contrast threshold in light and dark."
+  - id: appearance
+    requirement: "The journey works in light and dark. Tokenized surfaces, including portals (dialog, dropdown, popover, toast), follow the theme."
+  - id: viewports
+    requirement: "Critical journeys pass at 390 and 1280 wide. No horizontal overflow. Tap targets remain usable at 390."
+  - id: loading-error-not-found
+    requirement: "User-facing route segments provide loading, error, and not-found UI where the job can wait, fail, or miss."
+  - id: link-internal
+    requirement: "Internal navigation uses next/link or the router. A raw <a> for an internal route is a fail."
+  - id: pending-submit
+    requirement: "A submitting action is pending-visible and idempotent. Double-click does not double-submit."
+  - id: required-states
+    requirement: "Loading, empty, error, success, offline, and forbidden exist where the screen's job requires them."
+  - id: destructive-friction
+    requirement: "A destructive operation uses AlertDialog or an undo model. A naked destructive Button click is a fail."
+  - id: rsc-secrets
+    requirement: "Client components do not embed secrets, service-role keys, or unfiltered PII. Server-only modules stay server-only."
+
+rule: A high critic score never overrides a mechanical miss. A green native-iPhone suite never overrides a web miss.

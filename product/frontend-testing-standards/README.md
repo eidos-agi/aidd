@@ -18,7 +18,8 @@ Native Apple surfaces do not stop at journeys. Copy the plugin that matches the 
 - macOS → `plugins/mac-desktop/`
 - iPhone → `plugins/iphone/`
 - iPad → `plugins/ipad/`
+- Next.js + shadcn → `plugins/nextjs-shadcn/`
 
-Do not collapse them. Phone-on-tablet and tablet-on-phone are both fails. The builder does not approve its own UI.
+Do not collapse them. Phone-on-tablet and tablet-on-phone are both fails. A 390px Chrome viewport is not iPhone. The builder does not approve its own UI.
 
 See `templates/journey.yaml`.

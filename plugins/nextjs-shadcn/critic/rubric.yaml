@@ -1,0 +1,11 @@
+version: 1
+surface: nextjs-shadcn
+dimensions:
+  hierarchy: One primary Button. Task is first.
+  tokens: CSS variables, not magic. Portals follow theme.
+  radix: Dialogs, menus, and sheets behave.
+  slop: No gradient marketing, card walls, or badge confetti.
+  density: Information-forward. Not a dashboard of nothing.
+  rsc: Client islands are justified.
+  responsiveness: 390 and 1280 both look intended.
+  consistency: Same primitive for the same job.

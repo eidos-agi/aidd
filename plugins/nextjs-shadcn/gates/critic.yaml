@@ -1,0 +1,28 @@
+version: 1
+tier: 3
+enforcement: comment-only-until-calibrated
+surface: nextjs-shadcn
+
+independence: The critic is not the builder. A passing native-Apple verdict is inadmissible evidence.
+
+require_evidence: true
+
+blocking_when_precision_proven:
+  - competing-primary-action
+  - hydration-mismatch
+  - axe-serious
+  - raw-control
+  - broken-radix-dialog
+  - missing-loading-or-error
+  - dark-mode-portal
+  - overflow-at-390
+  - dashboard-slop
+  - undeclared-primitive
+
+advisory_until_calibrated:
+  - feels-generic
+  - could-be-calmer
+  - copy-elegance
+  - motion-taste
+
+rule: A claim needs observable evidence from screenshot, a11y tree, Playwright trace, or a named contract rule.

@@ -1,0 +1,40 @@
+version: 1
+surface: nextjs-shadcn
+
+tools:
+  - build_app()                          # next build
+  - start_preview()                      # next start, not next dev, for the gate
+  - goto(route, searchParams)
+  - set_viewport(width, height)
+  - set_color_scheme(light|dark)
+  - set_reduced_motion(bool)
+  - seed_backend(scenario)
+  - mock_route(handler)                  # MSW or Playwright route
+  - inspect_a11y_tree()
+  - axe()
+  - click(testId|role)
+  - type_text(testId|role, value)
+  - press(key)
+  - screenshot()
+  - read_console()                       # hydration warnings fail
+  - playwright_trace()
+  - run_playwright(plan)
+  - create_github_issue_or_pr()
+
+must_not:
+  - treat next dev as the release gate
+  - select by hashed Tailwind class
+  - use an iOS Simulator destination
+  - screenshot-only without axe and keyboard
+
+permissions:
+  default:
+    - edit test files
+    - run build/test
+    - inspect traces, screenshots, console
+    - open a PR of tests
+  requires_approval:
+    - modify production source
+    - merge
+    - change critic gates or baselines
+    - add a new ui primitive under components/ui

@@ -1,0 +1,42 @@
+version: 1
+surface: nextjs-shadcn
+router: app
+component_system: shadcn
+radix: required
+styling: tailwind-tokens
+
+product_character:
+  - calm
+  - editorial
+  - information-forward
+  - never-dashboard-dense
+  - never-gradient-marketing-app
+
+principles:
+  - Every screen has one dominant task.
+  - Server Components by default.
+  - Use copied shadcn primitives. Register a reason before inventing a new one.
+  - Tokens, not magic numbers.
+  - 390 is a real product, not a bonus screenshot.
+
+disallow:
+  - decorative_gradients
+  - card_per_stat_dashboard
+  - three_filled_buttons
+  - badge_confetti
+  - raw_button_for_product_ui
+  - whole_page_use_client
+  - mixing_default_and_new_york
+  - "Oops!"
+  - "Something went wrong"
+
+min_touch_target_px: 44
+must_support_dark_mode: true
+max_primary_actions_on_task_screen: 1
+required_viewports:
+  - 390x844
+  - 1280x720
+required_journeys:
+  - keyboard-only
+  - light
+  - dark

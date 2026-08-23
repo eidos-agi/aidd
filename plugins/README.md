@@ -38,6 +38,7 @@ See `contract.yaml`. Minimum:
 | `mac-desktop` | macOS windows, menus, pointer | Treating Mac as a big iPad |
 | `iphone` | Compact iPhone | iPad chrome crammed into 390pt |
 | `ipad` | Regular-width iPad | Stretched iPhone layout |
+| `nextjs-shadcn` | Next.js App Router + shadcn/ui | AI dashboard slop, raw controls, hydration mismatch |
 
 These are siblings. A green suite on one is inadmissible evidence on the others. Copy only the surfaces the product ships.
 

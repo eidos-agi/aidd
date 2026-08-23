@@ -1,0 +1,30 @@
+version: 1
+surface: nextjs-shadcn
+default_budget:
+  minutes: 20
+
+mission: >
+  Explore this Next.js build. Prioritize hydration warnings, 390 overflow,
+  dark-mode portals, keyboard traps, missing loading/error/not-found,
+  raw controls, double-submit, soft-nav back, and screens altered by this PR.
+
+must_not:
+  - use native iOS or macOS destinations
+  - purchase
+  - delete remote data
+  - leave the configured test tenant
+
+reward:
+  - hydration mismatch
+  - dialog that does not restore focus
+  - popover that stays light in dark mode
+  - dashboard slop vs the contract
+  - short replayable Playwright tests
+
+output:
+  - minimized reproduction path
+  - evidence packet
+  - candidate Playwright spec
+  - novelty score
+
+rule: Exploratory work that does not become a fixture is wasted.

@@ -1,0 +1,33 @@
+screen: example-settings
+surface: nextjs-shadcn
+route: /settings
+primary_task: "Change account email and confirm"
+required_files:
+  - app/settings/page.tsx
+  - app/settings/loading.tsx
+  - app/settings/error.tsx
+required_states:
+  - loading
+  - populated
+  - empty
+  - error
+  - forbidden
+  - pending-submit
+hierarchy:
+  max_primary_ctas: 1
+  primary_cta: settings.save
+  primary_cta_variant: default
+layout:
+  viewports: [390, 1280]
+  chrome: sidebar-or-sheet
+  tokens_only: true
+form:
+  schema: settingsEmailSchema
+  labels: required
+  error_binding: required
+identifiers:
+  - settings.root
+  - settings.email
+  - settings.save
+  - settings.error
+  - settings.empty

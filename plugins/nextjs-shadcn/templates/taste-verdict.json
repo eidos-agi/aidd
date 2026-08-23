@@ -1,0 +1,19 @@
+{
+  "screen": "Dashboard",
+  "surface": "nextjs-shadcn",
+  "verdict": "fail",
+  "confidence": 0.9,
+  "scores": {
+    "hierarchy": 2,
+    "tokens": 4,
+    "slop": 1,
+    "responsiveness": 3
+  },
+  "blockingFindings": [
+    {
+      "rule": "no-slop-surface",
+      "evidence": "Four equal Card metrics with decorative gradients and two filled Buttons (Export, Create) above the fold at 1280.",
+      "recommendedChange": "One primary Create. Export as outline. Metrics as a compact definition list, not a card wall."
+    }
+  ]
+}

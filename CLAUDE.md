@@ -20,6 +20,7 @@ This repo is knowledge. Skills and templates. A product later owns a binary.
 | `/aidd-mac` | Autonomous macOS desktop UI |
 | `/aidd-iphone` | Autonomous iPhone UI |
 | `/aidd-ipad` | Autonomous iPad UI |
+| `/aidd-next` | Autonomous Next.js + shadcn |
 | `/aidd-prune` | Kill unearned surface |
 
 ## Guardrails
@@ -56,7 +57,7 @@ org/
   product-candidates/gen-NNN/
 ```
 
-If the product has a native Apple surface, copy the matching plugin: `mac-desktop`, `iphone`, `ipad`. A green suite on one is inadmissible on the others. The builder does not approve its own UI.
+If the product has a native Apple surface, copy the matching plugin: `mac-desktop`, `iphone`, `ipad`. If it is Next.js + shadcn, copy `nextjs-shadcn`. A green suite on one is inadmissible on the others. The builder does not approve its own UI.
 
 ## Related Forges
 

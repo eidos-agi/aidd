@@ -13,7 +13,8 @@ surfaces:
 sibling_plugins:
   - iphone
   - mac-desktop
-rule_vs_siblings: Passing iPhone or Mac gates does not pass iPad. Stretched-phone and desktop-only chrome are both fails.
+  - nextjs-shadcn
+rule_vs_siblings: Passing iPhone, Mac, or a 1280px Next.js suite does not pass iPad. Stretched-phone and desktop-only chrome are both fails.
 
 machines:
   builder: Implements UI. Never grades itself.

@@ -1,0 +1,24 @@
+version: 1
+surface: nextjs-shadcn
+composition:
+  - First viewport states the task
+  - One filled default Button
+  - No card-per-stat wall
+  - No decorative gradient
+tokens:
+  - Colors from CSS variables
+  - Dark mode includes dialogs, dropdowns, toasts
+  - Radius and type match the copied theme
+radix:
+  - Dialog title exists
+  - Escape closes
+  - Focus returns
+  - Menu is keyboardable
+routes:
+  - loading.tsx does not look like a white flash with no structure
+  - error.tsx names a recovery
+  - not-found is a designed screen
+forbidden_looks:
+  - whole_page_use_client
+  - raw_button_for_product_ui
+  - mixing_button_implementations

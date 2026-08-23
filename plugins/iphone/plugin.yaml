@@ -13,7 +13,8 @@ surfaces:
 sibling_plugins:
   - ipad
   - mac-desktop
-rule_vs_siblings: Passing iPad or Mac gates does not pass iPhone. Phone-on-tablet and tablet-on-phone are both fails.
+  - nextjs-shadcn
+rule_vs_siblings: Passing iPad, Mac, or a 390px Next.js suite does not pass iPhone. Phone-on-tablet and tablet-on-phone are both fails.
 
 machines:
   builder: Implements UI. Never grades itself.

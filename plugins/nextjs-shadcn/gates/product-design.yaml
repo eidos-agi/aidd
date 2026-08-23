@@ -1,0 +1,26 @@
+version: 1
+tier: 2
+enforcement: blocking-when-declared
+surface: nextjs-shadcn
+
+invariants:
+  - id: one-primary-action
+    requirement: "A transactional screen has exactly one Button variant=default (or equivalent primary). Others are secondary, ghost, or outline."
+  - id: first-view-task
+    requirement: "The primary task is identifiable in the first viewport at 390 and 1280."
+  - id: tokens-only
+    requirement: "Color, radius, shadow, and font come from shadcn CSS variables / design tokens. Magic values are undeclared primitives."
+  - id: no-primitive-drift
+    requirement: "Do not mix Default and New York, or two Button implementations."
+  - id: no-slop-surface
+    requirement: "No decorative gradients, badge confetti, or card-per-stat dashboards unless the screen contract allows them."
+  - id: empty-means
+    requirement: "Empty state says what the user is seeing, why, and what to do next. Use the product Empty primitive if one exists."
+  - id: sidebar-or-not
+    requirement: "App chrome is the shadcn Sidebar (or a declared alternative) at 1280, and a Sheet or compact nav at 390. A desktop-only sidebar that cannot open on 390 fails."
+  - id: form-schema
+    requirement: "Forms that mutate have a schema (zod or equivalent) shared with the server action. Client-only validation is a fail."
+  - id: copy-voice
+    requirement: "Labels are concise. Verbs are specific. Destructive is the destructive variant. Disallowed copy is absent."
+  - id: use-client-tax
+    requirement: "Each 'use client' file names why it cannot be a Server Component. Whole-page client wrappers fail unless declared."

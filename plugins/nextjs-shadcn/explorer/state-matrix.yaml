@@ -1,0 +1,21 @@
+version: 1
+surface: nextjs-shadcn
+
+axes:
+  content: [empty, minimal, typical, maximum, malformed, long-strings]
+  lifecycle: [first-load, streaming, retry, refreshed, stale, completed]
+  failure: [network, unauthorized, validation, server-action, not-found]
+  viewport: [390x844, 768x1024, 1280x720, 1440x900]
+  system: [light, dark, reduced-motion, high-contrast]
+  input: [pointer, keyboard-only]
+  nav: [direct-url, soft-link, back, forward, deep-search-params]
+  account: [anonymous, new, returning, forbidden]
+
+entry:
+  - goto(route)
+  - seed_backend
+  - mock_route
+  - set_viewport
+  - set_color_scheme
+
+rule: The explorer creates these states. The critic judges them. The suite keeps them. Native Apple states do not live here.

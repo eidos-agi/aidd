@@ -68,11 +68,12 @@ plugins/
   mac-desktop/            # macOS windows, menus, pointer
   iphone/                 # compact phone: thumb, tab bar, interruptions
   ipad/                   # regular width: sidebar, Split View, multi-window
+  nextjs-shadcn/          # App Router + shadcn: Playwright, Radix, tokens
 ```
 
 See [plugins/README.md](plugins/README.md) and [layout/plugins.md](layout/plugins.md).
 
-Apple surfaces are siblings, not an "iOS" umbrella. A green iPad suite is inadmissible on iPhone. XCTest decides go/no-go. An independent critic judges taste. Humans author new product direction.
+Apple surfaces are siblings, not an "iOS" umbrella. A green iPad suite is inadmissible on iPhone. Web is `nextjs-shadcn`, not a 390px stand-in for `iphone`. XCTest or Playwright decides go/no-go. An independent critic judges taste. Humans author new product direction.
 
 ## Org layout
 
@@ -100,6 +101,7 @@ Do not name an active rewrite `product-v2` until v2 is a settled external contra
 | `/aidd-mac` | Autonomous macOS desktop UI |
 | `/aidd-iphone` | Autonomous iPhone UI. Compact. Not iPad |
 | `/aidd-ipad` | Autonomous iPad UI. Regular width. Not a stretched iPhone |
+| `/aidd-next` | Autonomous Next.js + shadcn. Playwright is the gate |
 | `/aidd-prune` | Kill unearned surface. Smaller and holding is a promotion |
 
 ## Guardrails

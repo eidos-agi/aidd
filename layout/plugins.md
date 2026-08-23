@@ -28,4 +28,4 @@ org/
 
 The candidate may read public plugin contracts. It may not edit held-out baselines, critic calibration, or plugin hard gates.
 
-Apple surfaces are siblings: `mac-desktop`, `iphone`, `ipad`. Copy only what the product ships. Do not treat a green suite on one as evidence on another.
+Apple surfaces are siblings: `mac-desktop`, `iphone`, `ipad`. Web is `nextjs-shadcn`. Copy only what the product ships. Do not treat a green suite on one as evidence on another. A 390px browser is not iPhone.

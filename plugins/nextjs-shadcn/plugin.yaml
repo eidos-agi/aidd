@@ -1,0 +1,44 @@
+id: nextjs-shadcn
+version: 0.1.0
+kind: aidd-plugin
+summary: Autonomous Next.js App Router + shadcn/ui. Playwright is the gate. Radix is the a11y constitution. Tokens are the look. Not a native Apple plugin.
+
+extends:
+  - product/frontend-testing-standards
+
+surfaces:
+  - nextjs-app-router
+  - shadcn-ui
+  - browser
+
+sibling_plugins:
+  - mac-desktop
+  - iphone
+  - ipad
+rule_vs_siblings: A green iPhone or iPad native suite is inadmissible here. Responsive web is this plugin. Native is those plugins.
+
+machines:
+  builder: Implements routes, server/client boundaries, shadcn composition. Never grades itself.
+  explorer: Drives Playwright across viewports, dark, keyboard, soft navigation. Minimizes traces.
+  critic: Independent judge of token use, Radix contracts, hierarchy, and slop.
+
+oracle_rule: The builder does not approve its own UI.
+
+hard_gates_file: gates/mechanical.yaml
+product_invariants_file: gates/product-design.yaml
+critic_file: gates/critic.yaml
+
+candidate_may_not_edit:
+  - gates/
+  - critic/rubric.yaml
+  - corpus/approved/
+  - held-out baselines in plugin-evals/nextjs-shadcn/
+
+skills:
+  - /aidd-next
+
+humans_still:
+  - New interaction models
+  - New shadcn primitives
+  - New product taste
+  - Promotion
