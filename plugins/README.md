@@ -13,6 +13,8 @@ plugins/<id>/            # optional — only when the product needs that surface
 
 A plugin ships knowledge: doctrine, contracts, gates, templates, skills. Not a binary. A product later owns the runner.
 
+Skills that are tools, not surfaces, live in `.claude/skills/` (example: `/cloudflare-api-mcp`). Do not invent a plugin just to hold a connector.
+
 ## Rules
 
 1. A plugin may extend a leg. It may not weaken one.
