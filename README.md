@@ -6,33 +6,45 @@ AI-driven development. Implementation is disposable. Intent, oracles, and fitnes
 
 Part of the [Eidos AGI](https://github.com/eidos-agi) forge ecosystem.
 
-This repo is knowledge. Skills, doctrine, and templates. Not a runtime.
+This repo is the champion. Knowledge, evals, skills, templates. Not a runtime.
+
+Generations are sibling repos. AI bashes there. Winners get pushed back here. The public name stays `aidd`.
+
+| Repo | Role |
+| --- | --- |
+| [`eidos-agi/aidd`](https://github.com/eidos-agi/aidd) | Champion. Public. Evals live here. |
+| [`eidos-agi/aidd-v1`](https://github.com/eidos-agi/aidd-v1) | Generation 1. First bounded bash. |
+| `eidos-agi/aidd-v2` | Generation 2. Opened on a trigger, not a calendar. |
 
 ## Why
 
 AI made rebuilds cheap. It did not make semantic parity cheap. The durable system is the evaluator.
 
-A linear sequence of `product-v1`, `product-v2`, `product-v3` assumes every successor is better. That is ceremony, not search.
-
-Use champion–challenger:
+Products get versioned generation repos:
 
 ```
-                     ┌── candidate A (add)     ──┐
-product (champion) ──┼── candidate B (same)    ──┼── evaluation ──> next champion
-                     └── candidate C (smaller) ──┘
+github.com/<org>/
+  product/        # champion. what the public sees. evals live here.
+  product-v1/     # generation 1. AI bashes a version here.
+  product-v2/     # generation 2. clean slate against frozen evals.
+  product-v3/     # ...
 ```
 
-The public sees the major upgrade. The org sees the competition that produced it.
+`product-v2` is a challenger, not a successor. It can lose. Promotion is evidence-gated. Ties stay with the champion.
+
+You can open two theses at once (`product-v2`, `product-v2-smaller`) if search needs it. Do not schedule vN on a calendar. See [layout/generations.md](layout/generations.md).
 
 ## Doctrine
 
 1. Code is a byproduct of intent, oracles, and fitness.
-2. A rebuild is a new generation, not a confession.
+2. A rebuild is a new generation repo, not a confession.
 3. Promotion is evidence-gated. Ties stay with the champion. A smaller candidate that holds the jobs is not a tie.
 4. Tests that can be rewritten to match the code are not tests.
 5. Humans own product, risk, promotion, and the oracle. AI owns generation, search, and mechanical execution.
+6. The generation is `product-vN`. The public name stays `product`. Do not bash in the champion.
+7. Verifiability sets the automation ceiling. What you cannot check, a human still owns.
 
-See [doctrine/principles.md](doctrine/principles.md) and [doctrine/features-are-candidates.md](doctrine/features-are-candidates.md).
+See [doctrine/principles.md](doctrine/principles.md), [doctrine/champion-challenger.md](doctrine/champion-challenger.md), and [doctrine/field.md](doctrine/field.md).
 
 ## The five legs
 
@@ -78,24 +90,24 @@ Apple surfaces are siblings, not an "iOS" umbrella. A green iPad suite is inadmi
 ## Org layout
 
 ```
-org/
-  product/                 # current champion (what runs)
-  product-evals/           # tests, corpus, scorer — versioned, mostly immutable
-  plugin-evals/            # held-out plugin baselines and critic calibration
-  product-candidates/      # challenger implementations
-    gen-014/
-    gen-015/
+github.com/<org>/
+  product/                 # champion. public. evals live here.
+  product-v1/              # generation 1. AI bashes here.
+  product-v2/              # generation 2. clean slate.
+  product-evals/           # optional. only if evals are not already in product/
 ```
 
-Do not name an active rewrite `product-v2` until v2 is a settled external contract. Call it `next` until it earns a release.
+AIDD keeps evals in `aidd` because they are the company. Candidates read public contracts. They do not edit held-out fixtures, reconciliation totals, cross-tenant probes, or quality thresholds.
+
+When a challenger wins, it is pushed back to `product`. Tag the outgoing champion (`legacy-v1-final`). The public sees the upgrade. The org keeps the generations.
 
 ## Skills
 
 | Skill | What it does |
 |---|---|
 | `/aidd` | The method |
-| `/aidd-rebuild` | Spin a clean-room generation against frozen evals |
-| `/aidd-promote` | Score a challenger. Promote only on evidence |
+| `/aidd-rebuild` | Open `product-vN` against frozen evals |
+| `/aidd-promote` | Score `product-vN`. Promote only on evidence. Push back to `product` |
 | `/aidd-validate` | Grade an AI-produced artifact with an independent panel |
 | `/aidd-plugin` | Add or use a plugin. Do not invent one to rename a leg |
 | `/aidd-mac` | Autonomous macOS desktop UI |
@@ -109,11 +121,12 @@ Do not name an active rewrite `product-v2` until v2 is a settled external contra
 1. A candidate must not redefine its own grading rubric.
 2. Hard gates cannot be averaged away.
 3. Failures become fixtures before the next generation.
-4. Scheduled rewrites are banned. Rebuild on a trigger.
+4. Scheduled rewrites are banned. Rebuild on a trigger. The trigger opens `product-vN`.
 5. Human sign-off is a gate, not a courtesy.
 6. The generator does not choose, edit, or weaken the validation panel in the same run.
 7. The builder does not approve its own UI. Plugin critics are part of the oracle.
 8. The builder does not grade its own deletions. A feature without a job and a kill condition is undeclared surface.
+9. A public eval the builder can see is not held-out. Goodhart is a hard problem, not a footnote.
 
 ## Related
 

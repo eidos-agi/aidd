@@ -1,25 +1,26 @@
 # Champion–challenger
 
-Do not make a linear sequence:
+Products get versioned generation repos:
 
 ```
-product-v1 → product-v2 → product-v3 → product-v4
+product      ← champion. public. evals live here.
+product-v1   ← generation 1. AI bashes a version here.
+product-v2   ← generation 2. clean slate against frozen evals.
+product-v3   ← ...
 ```
 
-That assumes every successor is better and makes history look like progress even if quality has regressed.
-
-Use search:
+Each `vN` is a challenger. It is not a successor. A higher number does not mean better. Promotion is evidence-gated. Ties stay with the champion.
 
 ```
-                     ┌── candidate A (add)     ──┐
-product (champion) ──┼── candidate B (same)    ──┼── evaluation ──> next champion
-                     └── candidate C (smaller) ──┘
+                     ┌── product-v2            ──┐
+product (champion) ──┼── product-v2-smaller    ──┼── evaluation ──> next champion
+                     └── product-v2-add        ──┘
 ```
 
-Each candidate can be a scratch repo, a Git worktree, or an ephemeral branch. Only a candidate that beats the champion under a fixed, broad evaluation suite becomes the next product.
+The public name stays `product`. Winners get pushed back. The public sees the upgrade. The org keeps the generations.
+
+Do not bash in the champion. Do not clone the champion’s internals as a template. The champion is an oracle.
 
 A smaller candidate that holds every remaining user job and every hard gate is a promotion. Search the subtractive half of the space. See `doctrine/features-are-candidates.md`.
 
-Version numbers describe shipped artifacts. Repositories describe ownership and development boundaries. Do not name an active rewrite `product-v2` until v2 is a settled external contract. Call the work `next` until it earns a release.
-
-A candidate that looks cleaner is not a promotion. A candidate that is cheaper and faster is not a promotion if it fails a hard gate. A candidate that deletes a job to look simple is not a promotion.
+A candidate that looks cleaner is not a promotion. A candidate that is cheaper and faster is not a promotion if it fails a hard gate. A candidate that deletes a job to look simple is not a promotion. A candidate that edits its own grader is not a candidate.

@@ -4,17 +4,19 @@
 
 ## What This Is
 
-AIDD is the operating model for AI-driven development. Isolated candidates. Frozen evals. Evidence-gated promotion. Implementation is disposable. The oracle is not. Features are candidates too.
+AIDD is the operating model for AI-driven development. Isolated generation repos. Frozen evals. Evidence-gated promotion. Implementation is disposable. The oracle is not. Features are candidates too.
 
-This repo is knowledge. Skills and templates. A product later owns a binary.
+This repo is the champion. Knowledge and templates. A product later owns a binary.
+
+Generations are sibling repos: `aidd-v1`, `aidd-v2`. Do not bash here.
 
 ## Skills
 
 | Skill | What it does |
 |---|---|
 | `/aidd` | The method |
-| `/aidd-rebuild` | Spin a clean-room generation against frozen evals |
-| `/aidd-promote` | Score a challenger. Promote only on evidence |
+| `/aidd-rebuild` | Open `product-vN` against frozen evals |
+| `/aidd-promote` | Score a generation. Promote only on evidence. Push back to the champion |
 | `/aidd-validate` | Grade an AI-produced artifact with an independent panel |
 | `/aidd-plugin` | Add or use a plugin |
 | `/aidd-mac` | Autonomous macOS desktop UI |
@@ -27,16 +29,17 @@ This repo is knowledge. Skills and templates. A product later owns a binary.
 
 1. A candidate must not redefine its own grading rubric.
 2. Hard gates cannot be averaged away. A high score does not hide a tenant leak or a buried recommendation.
-3. Failures become fixtures before the next generation.
-4. Scheduled rewrites are banned. Rebuild on a trigger, not a calendar.
+3. Failures become fixtures in the champion before the next generation.
+4. Scheduled rewrites are banned. Rebuild on a trigger. The trigger opens `product-vN`.
 5. Humans own product, risk, promotion, and the oracle. AI owns generation, search, and mechanical execution.
 6. Tests that can be rewritten to match the code are not tests.
-7. Do not edit `validation-personas/`, `simplicity-standards/`, plugin gates, or `product-evals/` in the same run that authors the artifact.
+7. Do not edit `validation-personas/`, `simplicity-standards/`, plugin gates, or held-out evals in the same run that authors the artifact.
 8. The builder does not grade its own deletions.
+9. A public eval the builder can see is not held-out.
 
 ## Layout
 
-Copy the five legs into a product repo:
+Copy the five legs into a product champion:
 
 ```
 product/
@@ -47,14 +50,13 @@ product/
   simplicity-standards/
 ```
 
-Keep evals outside the candidate:
+Keep generations in sibling repos:
 
 ```
-org/
-  product/
-  product-evals/
-  plugin-evals/<id>/
-  product-candidates/gen-NNN/
+github.com/<org>/
+  product/            # champion. evals live here.
+  product-v1/
+  product-v2/
 ```
 
 If the product has a native Apple surface, copy the matching plugin: `mac-desktop`, `iphone`, `ipad`. If it is Next.js + shadcn, copy `nextjs-shadcn`. A green suite on one is inadmissible on the others. The builder does not approve its own UI.
