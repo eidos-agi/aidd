@@ -1,0 +1,29 @@
+version: 1
+default_budget:
+  minutes: 20
+
+mission: >
+  Explore this build. Prioritize unvisited states, unexpected transitions,
+  recoverable failures, permission boundaries, deep links, and screens
+  altered by this PR.
+
+must_not:
+  - purchase
+  - delete remote data
+  - submit forms externally
+  - leave the configured test tenant
+
+reward:
+  - unseen screen/state combinations
+  - unexpected view-tree changes
+  - errors that remain recoverable
+  - incoherent copy, hierarchy, or loading
+  - short replayable traces, not long narratives
+
+output:
+  - minimized reproduction path
+  - evidence packet
+  - candidate XCTest or Maestro flow
+  - novelty score
+
+rule: Exploratory work that does not become a fixture is wasted.

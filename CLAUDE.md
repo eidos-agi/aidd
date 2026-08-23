@@ -16,6 +16,8 @@ This repo is knowledge. Skills and templates. A product later owns a binary.
 | `/aidd-rebuild` | Spin a clean-room generation against frozen evals |
 | `/aidd-promote` | Score a challenger. Promote only on evidence |
 | `/aidd-validate` | Grade an AI-produced artifact with an independent panel |
+| `/aidd-plugin` | Add or use a plugin |
+| `/aidd-mac` | Autonomous native Apple UI |
 
 ## Guardrails
 
@@ -25,7 +27,7 @@ This repo is knowledge. Skills and templates. A product later owns a binary.
 4. Scheduled rewrites are banned. Rebuild on a trigger, not a calendar.
 5. Humans own product, risk, promotion, and the oracle. AI owns generation, search, and mechanical execution.
 6. Tests that can be rewritten to match the code are not tests.
-7. Do not edit `validation-personas/` or `product-evals/` in the same run that authors the artifact.
+7. Do not edit `validation-personas/`, plugin gates, or `product-evals/` in the same run that authors the artifact.
 
 ## Layout
 
@@ -45,8 +47,11 @@ Keep evals outside the candidate:
 org/
   product/
   product-evals/
+  plugin-evals/<id>/
   product-candidates/gen-NNN/
 ```
+
+If the product has a native Apple surface, copy `plugins/mac-desktop/`. The builder does not approve its own UI.
 
 ## Related Forges
 

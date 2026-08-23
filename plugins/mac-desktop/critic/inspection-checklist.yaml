@@ -1,0 +1,33 @@
+version: 1
+composition:
+  - First-view focal point obvious within a second
+  - Content ordered in the sequence the user needs
+  - Spacing, alignment, grouping deliberate
+  - No competing visually dominant elements
+  - Density matches the immediate decision
+
+typography_color:
+  - Readable at standard and accessibility sizes
+  - Hierarchy maps to importance
+  - Color adds meaning without carrying it alone
+  - Secondary text subdued but legible
+  - Error, warning, success, disabled distinct
+
+affordance:
+  - Interactive is obvious
+  - Primary action easy to locate
+  - Destructive has visual friction
+  - Loading disables only what must be disabled
+  - Feedback appears where attention already is
+
+state_craft:
+  - Empty is actionable
+  - Error names cause and recovery
+  - Loading preserves eventual structure where it should
+  - Retry preserves input
+  - Success closes and points to the next action
+
+platform:
+  - Safe areas, keyboard, sheets, navigation, Dynamic Type, appearance
+  - Familiar patterns where familiarity reduces cognition
+  - Custom interaction worth its deviation cost

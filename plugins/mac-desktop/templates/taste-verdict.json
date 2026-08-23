@@ -1,0 +1,21 @@
+{
+  "screen": "Checkout",
+  "verdict": "fail",
+  "confidence": 0.89,
+  "scores": {
+    "hierarchy": 4,
+    "clarity": 3,
+    "platformFit": 4,
+    "consistency": 5,
+    "accessibility": 3
+  },
+  "blockingFindings": [
+    {
+      "rule": "one-primary-action",
+      "evidence": "Pay Now and Continue are equally prominent",
+      "user_impact": "The completion task competes with a secondary path",
+      "recommendedChange": "Keep Pay Now primary; demote Continue to a text action.",
+      "severity": "blocking"
+    }
+  ]
+}

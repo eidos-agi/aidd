@@ -1,0 +1,28 @@
+version: 1
+tier: 3
+enforcement: comment-only-until-calibrated
+model_required: true
+
+independence: The critic is not the builder. A second critic may review blocking findings.
+
+require_evidence: true
+ban_vague_praise: true
+
+blocking_when_precision_proven:
+  - competing-primary-action
+  - text-clipping
+  - lost-accessibility-semantics
+  - missing-required-state
+  - theme-or-large-text-breakage
+  - declared-component-or-token-violation
+
+advisory_until_calibrated:
+  - feels-generic
+  - could-be-calmer
+  - visual-balance
+  - novel-layout
+  - copy-elegance
+
+verdict_schema: templates/taste-verdict.json
+
+rule: A claim needs observable evidence from screenshot, semantics, trace, or a named contract rule. No evidence, no fail.

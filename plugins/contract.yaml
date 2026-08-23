@@ -1,0 +1,29 @@
+version: 1
+kind: aidd-plugin-contract
+
+required:
+  - id
+  - summary
+  - extends
+  - machines
+  - hard_gates
+  - candidate_may_not_edit
+  - skills
+
+machines_allowed:
+  - builder
+  - explorer
+  - critic
+  - panel
+
+rules:
+  - The builder does not approve its own work.
+  - Explorer discovers. Critic judges. CI gates.
+  - A plugin may not lower a core-leg hard gate.
+  - Promotion still requires a human signature.
+
+optional:
+  - corpus
+  - state_matrix
+  - evidence_bundle
+  - constrained_fix_policy

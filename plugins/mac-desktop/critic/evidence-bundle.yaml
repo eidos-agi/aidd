@@ -1,0 +1,22 @@
+version: 1
+example:
+  screen: project-detail
+  task: "Review project health and address the next issue"
+  device: iPhone-small
+  conditions:
+    appearance: dark
+    contentSize: accessibilityXL
+    network: offline
+    fixture: long-content
+  artifacts:
+    screenshot: screen.png
+    beforeScreenshot: approved.png
+    accessibilityTree: a11y.json
+    viewTree: view.json
+    interactionTrace: trace.json
+    consoleLog: app.log
+  references:
+    - previous approved version
+    - design-system component state
+    - golden example
+    - nearby screen in the same flow

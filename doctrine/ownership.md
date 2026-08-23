@@ -17,6 +17,7 @@ Preserve across every rebuild:
 - Cost, latency, reliability telemetry
 - Decision records explaining which candidate won and why
 - Validation personas, AI-artifact taxonomy, reader-simulation fixtures, and hard gates
+- Plugin contracts, mechanical gates, critic calibration, approved visual corpus, and held-out plugin-evals
 
 Do not preserve:
 

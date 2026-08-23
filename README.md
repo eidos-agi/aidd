@@ -55,12 +55,28 @@ product/
 
 For autonomous rebuilds, data standards are often the most important of the three operational legs. A regenerated UI can look great while the system silently duplicates records. When the product *writes* for humans — memos, case studies, briefs — validation-personas is the fourth gate.
 
+## Plugins
+
+Aidd has plugins. Legs are universal. Plugins are optional.
+
+A plugin is a capability pack for a surface the four legs do not fully cover. It may extend a leg. It may not weaken one.
+
+```
+plugins/
+  mac-desktop/            # native Apple UI: XCTest gates, explorer, taste critic
+```
+
+See [plugins/README.md](plugins/README.md) and [layout/plugins.md](layout/plugins.md).
+
+The first plugin, `mac-desktop`, is how you get no humans in routine frontend testing without letting a vision model be the release gate. XCTest decides go/no-go. An independent critic judges taste. Humans author new product direction.
+
 ## Org layout
 
 ```
 org/
   product/                 # current champion (what runs)
   product-evals/           # tests, corpus, scorer — versioned, mostly immutable
+  plugin-evals/            # held-out plugin baselines and critic calibration
   product-candidates/      # challenger implementations
     gen-014/
     gen-015/
@@ -76,6 +92,8 @@ Do not name an active rewrite `product-v2` until v2 is a settled external contra
 | `/aidd-rebuild` | Spin a clean-room generation against frozen evals |
 | `/aidd-promote` | Score a challenger. Promote only on evidence |
 | `/aidd-validate` | Grade an AI-produced artifact with an independent panel |
+| `/aidd-plugin` | Add or use a plugin. Do not invent one to rename a leg |
+| `/aidd-mac` | Autonomous native Apple UI: test, explore, inspect, critique |
 
 ## Guardrails
 
@@ -85,6 +103,7 @@ Do not name an active rewrite `product-v2` until v2 is a settled external contra
 4. Scheduled rewrites are banned. Rebuild on a trigger.
 5. Human sign-off is a gate, not a courtesy.
 6. The generator does not choose, edit, or weaken the validation panel in the same run.
+7. The builder does not approve its own UI. Plugin critics are part of the oracle.
 
 ## Related
 

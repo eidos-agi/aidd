@@ -13,4 +13,6 @@ Not screenshots of the current champion. Contracts a challenger must still honor
 
 A rebuild that drops the skip link is a failed surface, not a visual refresh.
 
+Native Apple surfaces (macOS, iOS Simulator) do not stop at journeys. Copy `plugins/mac-desktop/`: deterministic XCTest as the release gate, an explorer for coverage, an independent critic for taste and visual inspection. The builder does not approve its own UI.
+
 See `templates/journey.yaml`.

@@ -20,3 +20,5 @@ product/
 The product repo holds the contract the agent builds against. A promotion controller may run additional protected tests the candidate cannot see.
 
 Templates for each leg live under `product/` in this forge. Copy them. Fill them. Do not invent a parallel folder named `tests/` that the candidate is allowed to rewrite.
+
+Plugins live under `plugins/`. Native Apple UI copies `plugins/mac-desktop/`. See `layout/plugins.md`.

@@ -1,0 +1,28 @@
+version: 1
+tier: 1
+enforcement: blocking
+model_required: false
+
+hard_gates:
+  - id: touch-target
+    requirement: "Every interactive target is at least 44 by 44 points."
+  - id: no-clip-overlap
+    requirement: "No text clips, overlaps, or leaves the screen bounds."
+  - id: contrast
+    requirement: "Text contrast meets the product threshold in light and dark."
+  - id: appearance
+    requirement: "The screen works in light and dark appearance."
+  - id: dynamic-type
+    requirement: "Core flows remain usable at standard and large accessibility text sizes."
+  - id: a11y-semantics
+    requirement: "Interactive controls have accessibility identifiers, labels, and traits. performAccessibilityAudit() is in the suite."
+  - id: required-states
+    requirement: "Loading, empty, error, success, offline, and permission-denied exist where the screen's job requires them."
+  - id: destructive-friction
+    requirement: "A destructive operation has confirmation or undo."
+  - id: keyboard-primary
+    requirement: "The keyboard cannot hide the active input or its primary completion action."
+  - id: identifier-stability
+    requirement: "Asserted controls use stable accessibility identifiers, not visible strings or coordinates."
+
+rule: A high critic score never overrides a mechanical miss.

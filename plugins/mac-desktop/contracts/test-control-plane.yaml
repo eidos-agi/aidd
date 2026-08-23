@@ -1,0 +1,46 @@
+version: 1
+# The agent gets a structured control plane. Not general-purpose screen poking.
+
+tools:
+  - build_app(scheme, configuration)
+  - boot_simulator(device, osVersion)
+  - reset_app_data()
+  - seed_backend(scenario)
+  - set_feature_flags(flags)
+  - launch_app(arguments, environment)
+  - inspect_ui_tree()
+  - tap(identifier)
+  - type_text(identifier, value)
+  - screenshot()
+  - read_logs()
+  - run_xctest(plan)
+  - compare_snapshot(baseline)
+  - create_github_issue_or_pr()
+
+app_must_provide:
+  - Stable accessibilityIdentifiers on interactive and asserted UI
+  - Test-only environment with deterministic fixtures
+  - Network interception or mock API
+  - Fixed clock, location, locale, feature flags
+  - Deep links into important states
+  - Resettable local storage and isolated test accounts
+
+launch:
+  arguments:
+    - "-uiTesting"
+    - "-useMockAuth"
+  environment:
+    API_BASE_URL: "http://localhost:8080"
+    FEATURE_PAYWALL: "disabled"
+
+permissions:
+  default:
+    - edit test files
+    - run build/test
+    - extract xcresult
+    - inspect screenshots and logs
+    - open a PR of tests
+  requires_approval:
+    - modify production source
+    - merge
+    - change critic gates or baselines

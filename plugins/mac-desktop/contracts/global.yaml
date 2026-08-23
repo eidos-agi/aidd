@@ -1,0 +1,24 @@
+version: 1
+product_character:
+  - calm
+  - editorial
+  - information-forward
+  - never-dashboard-dense
+
+principles:
+  - Every screen has one dominant task.
+  - Prefer progressive disclosure over visible advanced controls.
+  - Use native Apple patterns unless a product-specific pattern is clearly superior.
+  - Avoid decorative gradients, arbitrary cards, low-contrast secondary text, redundant icons, and generic empty states.
+
+disallow:
+  - gradientBackground
+  - iconOnlyDestructiveAction
+  - card_per_item_list
+  - unexplained_status_colors
+  - "Oops!"
+  - "Something went wrong"
+
+min_touch_target_pt: 44
+must_support_dynamic_type: true
+max_primary_actions_on_task_screen: 1

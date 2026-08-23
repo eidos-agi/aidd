@@ -1,0 +1,31 @@
+flow: checkout
+device: iPhone-small
+appearance: dark
+content_size: accessibilityXL
+
+tiles:
+  - id: 1
+    state: launch
+  - id: 2
+    state: form
+  - id: 3
+    state: keyboard
+  - id: 4
+    state: invalid-card
+  - id: 5
+    state: retry
+  - id: 6
+    state: processing
+  - id: 7
+    state: confirmation
+
+each_tile:
+  - screenshot
+  - key changed accessibility nodes
+  - visual-diff heatmap if applicable
+  - test outcome
+  - elapsed interaction time
+
+critic_order:
+  - judge the sheet for flow coherence
+  - open full-resolution only where risk appears

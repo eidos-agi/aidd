@@ -1,0 +1,38 @@
+screen: example-detail
+primary_task: "Understand status and take the next required action"
+required_states:
+  - loading
+  - populated
+  - empty
+  - error
+  - offline
+hierarchy:
+  max_primary_ctas: 1
+  primary_cta: example.primaryAction
+  max_above_fold_attention_competitors: 3
+layout:
+  min_control_size_pt: 44
+  supports_dynamic_type: true
+  disallow_horizontal_text_clipping: true
+  alignment_grid: content
+content:
+  error_must_include:
+    - plain_language_cause
+    - recovery_action
+  disallow_copy:
+    - "Oops!"
+    - "Something went wrong"
+design:
+  desired_character:
+    - confident
+    - quiet
+    - deliberate
+  disallow:
+    - decorative_gradients
+    - card_per_item_list
+    - unexplained_status_colors
+identifiers:
+  - example.root
+  - example.primaryAction
+  - example.error
+  - example.empty

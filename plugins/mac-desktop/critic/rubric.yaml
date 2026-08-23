@@ -1,0 +1,19 @@
+version: 1
+dimensions:
+  hierarchy: One clear primary action. Title, content, and actions have rank.
+  density: Secondary stays secondary. No accidental dashboard.
+  alignment: Shared grid, consistent margins, predictable rhythm.
+  typography: Intentional scale. No truncation. Dynamic Type holds.
+  interaction: Targets reachable. Loading, empty, error, success feel designed.
+  platform_fit: Native navigation, sheets, keyboard, gestures, safe areas.
+  consistency: The same semantic action looks and behaves the same.
+  content: Concise labels. Specific verbs. Destructive is unmistakable.
+  accessibility: Contrast, labels, focus order, Dynamic Type, usable controls.
+
+scoring: 1-5
+blocking: A high-confidence violation of a named Tier 1 or declared Tier 2 rule.
+
+forbidden_outputs:
+  - "looks good"
+  - "feels premium" without evidence
+  - novelty rewarded as quality
