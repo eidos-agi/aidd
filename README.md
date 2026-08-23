@@ -65,12 +65,14 @@ A plugin is a capability pack for a surface the five legs do not fully cover. It
 
 ```
 plugins/
-  mac-desktop/            # native Apple UI: XCTest gates, explorer, taste critic
+  mac-desktop/            # macOS windows, menus, pointer
+  iphone/                 # compact phone: thumb, tab bar, interruptions
+  ipad/                   # regular width: sidebar, Split View, multi-window
 ```
 
 See [plugins/README.md](plugins/README.md) and [layout/plugins.md](layout/plugins.md).
 
-The first plugin, `mac-desktop`, is how you get no humans in routine frontend testing without letting a vision model be the release gate. XCTest decides go/no-go. An independent critic judges taste. Humans author new product direction.
+Apple surfaces are siblings, not an "iOS" umbrella. A green iPad suite is inadmissible on iPhone. XCTest decides go/no-go. An independent critic judges taste. Humans author new product direction.
 
 ## Org layout
 
@@ -95,7 +97,9 @@ Do not name an active rewrite `product-v2` until v2 is a settled external contra
 | `/aidd-promote` | Score a challenger. Promote only on evidence |
 | `/aidd-validate` | Grade an AI-produced artifact with an independent panel |
 | `/aidd-plugin` | Add or use a plugin. Do not invent one to rename a leg |
-| `/aidd-mac` | Autonomous native Apple UI: test, explore, inspect, critique |
+| `/aidd-mac` | Autonomous macOS desktop UI |
+| `/aidd-iphone` | Autonomous iPhone UI. Compact. Not iPad |
+| `/aidd-ipad` | Autonomous iPad UI. Regular width. Not a stretched iPhone |
 | `/aidd-prune` | Kill unearned surface. Smaller and holding is a promotion |
 
 ## Guardrails

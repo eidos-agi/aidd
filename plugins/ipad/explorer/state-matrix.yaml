@@ -1,0 +1,24 @@
+version: 1
+surface: ipad
+
+axes:
+  content: [empty, minimal, typical, maximum, malformed, long-strings]
+  lifecycle: [first-run, loading, retry, refreshed, stale, completed]
+  failure: [network, auth-expired, validation, server]
+  device: [ipad-mini, ipad-pro-11, ipad-pro-13]
+  window: [full, split-1-3, split-1-2, split-2-3, slide-over, stage-manager, second-window]
+  input: [touch, pointer, hardware-keyboard]
+  system: [light, dark, dynamic-type-xl, reduced-motion, voiceover-focus]
+  locale: [primary, expansion-sensitive]
+  account: [anonymous, new, returning, edge-permission]
+
+entry:
+  - deep links
+  - launch arguments
+  - seeded backend fixtures
+  - set_split_view_ratio
+  - open_second_window
+  - attach_pointer
+  - attach_hardware_keyboard
+
+rule: The explorer creates these states. The critic judges them. The suite keeps them. iPhone states do not live here.

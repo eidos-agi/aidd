@@ -1,0 +1,24 @@
+version: 1
+tier: 2
+enforcement: blocking-when-declared
+surface: iphone
+
+invariants:
+  - id: one-primary-action
+    requirement: "A transactional or task-completion screen has exactly one dominant primary action."
+  - id: first-view-task
+    requirement: "A screen's primary user task is identifiable in the first compact view, without scrolling past a hero void."
+  - id: tab-or-stack
+    requirement: "Top-level jobs use a tab bar or an equivalent compact root. Do not invent a desktop toolbar."
+  - id: progressive-disclosure
+    requirement: "Secondary controls are in a sheet, menu, or subsequent screen. They do not compete in the first view."
+  - id: color-not-alone
+    requirement: "Every status color is paired with text, iconography, or another non-color cue."
+  - id: empty-means
+    requirement: "An empty state says what the user is seeing, why, and what to do next. It is not a tablet-sized illustration on a 390pt display."
+  - id: error-near-field
+    requirement: "A form reports errors near the field and preserves entered data."
+  - id: compact-lists
+    requirement: "Lists are rows, not card-per-item dashboards, unless the screen contract says so."
+  - id: copy-voice
+    requirement: "Labels are concise. Verbs are specific. Destructive actions are unmistakable."

@@ -1,22 +1,16 @@
 # Runner
 
-```
-xcodebuild test \
-  -scheme MyApp \
-  -testPlan AutonomousUI \
-  -destination 'platform=iOS Simulator,name=iPhone 16 Pro,OS=latest' \
-  -resultBundlePath artifacts/ui-tests.xcresult
-```
-
 macOS:
 
 ```
 xcodebuild test \
   -scheme MyApp \
-  -testPlan AutonomousUI \
+  -testPlan AutonomousMac \
   -destination 'platform=macOS' \
-  -resultBundlePath artifacts/ui-tests.xcresult
+  -resultBundlePath artifacts/mac-ui-tests.xcresult
 ```
+
+iPhone and iPad destinations do not belong in this plan. Those are `plugins/iphone` and `plugins/ipad`.
 
 Attach screenshots on purpose:
 

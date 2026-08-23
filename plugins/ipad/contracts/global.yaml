@@ -1,0 +1,41 @@
+version: 1
+surface: ipad
+size_class_home: regular-width
+root_chrome: sidebar-and-detail
+inputs: [touch, pointer, hardware-keyboard, pencil]
+
+product_character:
+  - calm
+  - spatial
+  - information-forward
+  - never-stretched-phone
+  - never-dashboard-dense
+
+principles:
+  - Every window has one dominant task.
+  - Regular width first. Compact is a Split View state, not the home.
+  - Prefer sidebar and popover over a giant phone stack.
+  - Size class can change at runtime. Design for reflow.
+
+disallow:
+  - stretched-iphone-stack
+  - iphone-tab-bar-as-ipad-root
+  - compact-sheet-for-every-inspector
+  - pointer-only-target
+  - iconOnlyDestructiveAction
+  - "Oops!"
+  - "Something went wrong"
+
+min_touch_target_pt: 44
+must_support_dynamic_type: true
+max_primary_actions_on_task_screen: 1
+required_devices:
+  - iPad mini
+  - iPad Pro 11
+  - iPad Pro 13
+required_multitasking:
+  - split-view-1-3
+  - split-view-1-2
+  - split-view-2-3
+  - slide-over
+  - stage-manager

@@ -1,0 +1,30 @@
+version: 1
+surface: iphone
+default_budget:
+  minutes: 20
+
+mission: >
+  Explore this iPhone build. Prioritize compact-width failures, thumb-zone
+  misses, safe-area collisions, keyboard-over-CTA, orientation traps,
+  interruption data loss, edge-swipe breakage, and screens altered by this PR.
+
+must_not:
+  - use an iPad or Mac destination
+  - purchase
+  - delete remote data
+  - leave the configured test tenant
+
+reward:
+  - SE-class clipping that Pro Max hid
+  - accessibility XL that breaks one-handed use
+  - landscape compact (wC hC) traps
+  - interruption that wipes a form
+  - short replayable traces
+
+output:
+  - minimized reproduction path
+  - evidence packet
+  - candidate XCTest
+  - novelty score
+
+rule: Exploratory work that does not become a fixture is wasted.

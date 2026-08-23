@@ -1,0 +1,31 @@
+version: 1
+surface: ipad
+default_budget:
+  minutes: 20
+
+mission: >
+  Explore this iPad build. Prioritize phone-on-tablet layouts, Split View
+  1/3 breakage, Stage Manager clipping, pointer-only affordances,
+  hardware-keyboard dead ends, two-window state corruption, empty deserts,
+  and screens altered by this PR.
+
+must_not:
+  - use an iPhone destination as evidence
+  - purchase
+  - delete remote data
+  - leave the configured test tenant
+
+reward:
+  - 1/3 Split View that drops the job
+  - stretched iPhone tab bar
+  - second window double-submit
+  - hover-only control
+  - short replayable traces
+
+output:
+  - minimized reproduction path
+  - evidence packet
+  - candidate XCTest
+  - novelty score
+
+rule: Exploratory work that does not become a fixture is wasted.

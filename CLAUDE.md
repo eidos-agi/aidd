@@ -17,7 +17,9 @@ This repo is knowledge. Skills and templates. A product later owns a binary.
 | `/aidd-promote` | Score a challenger. Promote only on evidence |
 | `/aidd-validate` | Grade an AI-produced artifact with an independent panel |
 | `/aidd-plugin` | Add or use a plugin |
-| `/aidd-mac` | Autonomous native Apple UI |
+| `/aidd-mac` | Autonomous macOS desktop UI |
+| `/aidd-iphone` | Autonomous iPhone UI |
+| `/aidd-ipad` | Autonomous iPad UI |
 | `/aidd-prune` | Kill unearned surface |
 
 ## Guardrails
@@ -54,7 +56,7 @@ org/
   product-candidates/gen-NNN/
 ```
 
-If the product has a native Apple surface, copy `plugins/mac-desktop/`. The builder does not approve its own UI.
+If the product has a native Apple surface, copy the matching plugin: `mac-desktop`, `iphone`, `ipad`. A green suite on one is inadmissible on the others. The builder does not approve its own UI.
 
 ## Related Forges
 

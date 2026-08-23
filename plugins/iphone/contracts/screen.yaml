@@ -1,0 +1,31 @@
+screen: example-detail
+surface: iphone
+primary_task: "Understand status and take the next required action"
+size_class: compact
+required_states:
+  - loading
+  - populated
+  - empty
+  - error
+  - offline
+  - interrupted
+hierarchy:
+  max_primary_ctas: 1
+  primary_cta: example.primaryAction
+  primary_cta_zone: lower-third
+  max_above_fold_attention_competitors: 2
+layout:
+  min_control_size_pt: 44
+  supports_dynamic_type: true
+  respects_safe_area: true
+  compact_keyboard_must_reveal_cta: true
+  system_back: true
+content:
+  error_must_include:
+    - plain_language_cause
+    - recovery_action
+identifiers:
+  - example.root
+  - example.primaryAction
+  - example.error
+  - example.empty

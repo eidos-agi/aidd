@@ -1,0 +1,11 @@
+version: 1
+surface: ipad
+dimensions:
+  regular_width: Sidebar and detail, not a stretched phone stack.
+  reflow: Split View and Stage Manager keep the job.
+  hierarchy: One primary action. No empty desert.
+  input: Touch, pointer, and keyboard all complete the job.
+  multi_window: Two windows do not corrupt state.
+  platform_fit: iPad patterns, not iPhone chrome scaled up, not Mac menu-bar-only.
+  accessibility: Contrast, labels, Dynamic Type, 44pt.
+  consistency: Same product as iPhone, different structure.

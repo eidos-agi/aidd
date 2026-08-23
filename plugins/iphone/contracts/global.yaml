@@ -1,0 +1,37 @@
+version: 1
+surface: iphone
+size_class_home: compact-width
+root_chrome: tab-bar-or-compact-stack
+primary_reach: thumb-lower-third
+
+product_character:
+  - calm
+  - one-handed
+  - information-forward
+  - never-dashboard-dense
+
+principles:
+  - Every screen has one dominant task.
+  - Compact first. Regular-width patterns are a different plugin.
+  - Prefer sheets and stacks over split views.
+  - Interruptions are normal. Do not design as if the session is sacred.
+
+disallow:
+  - sidebar-as-home
+  - inspector-column
+  - pointer-only-target
+  - stretched-ipad-hero
+  - iconOnlyDestructiveAction
+  - "Oops!"
+  - "Something went wrong"
+
+min_touch_target_pt: 44
+must_support_dynamic_type: true
+max_primary_actions_on_task_screen: 1
+required_devices:
+  - iPhone SE
+  - iPhone 16 Pro
+  - iPhone 16 Pro Max
+required_orientations:
+  - portrait
+  - landscape

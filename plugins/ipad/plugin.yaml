@@ -1,0 +1,42 @@
+id: ipad
+version: 0.1.0
+kind: aidd-plugin
+summary: Autonomous iPad UI. Regular width. Sidebar and detail. Split View, pointer, hardware keyboard. Not a stretched iPhone.
+
+extends:
+  - product/frontend-testing-standards
+
+surfaces:
+  - ipad
+  - ios-simulator-ipad
+
+sibling_plugins:
+  - iphone
+  - mac-desktop
+rule_vs_siblings: Passing iPhone or Mac gates does not pass iPad. Stretched-phone and desktop-only chrome are both fails.
+
+machines:
+  builder: Implements UI. Never grades itself.
+  explorer: Drives Split View, Stage Manager, pointer, hardware keyboard. Minimizes traces.
+  critic: Independent judge of regular-width hierarchy, reflow, and multi-window integrity.
+
+oracle_rule: The builder does not approve its own UI.
+
+hard_gates_file: gates/mechanical.yaml
+product_invariants_file: gates/product-design.yaml
+critic_file: gates/critic.yaml
+
+candidate_may_not_edit:
+  - gates/
+  - critic/rubric.yaml
+  - corpus/approved/
+  - held-out baselines in plugin-evals/ipad/
+
+skills:
+  - /aidd-ipad
+
+humans_still:
+  - New interaction models
+  - New component primitives
+  - New product taste
+  - Promotion

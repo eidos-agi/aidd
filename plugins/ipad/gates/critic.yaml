@@ -1,0 +1,28 @@
+version: 1
+tier: 3
+enforcement: comment-only-until-calibrated
+surface: ipad
+
+independence: The critic is not the builder. A passing iPhone verdict is inadmissible evidence.
+
+require_evidence: true
+
+blocking_when_precision_proven:
+  - competing-primary-action
+  - text-clipping
+  - lost-accessibility-semantics
+  - missing-required-state
+  - theme-or-large-text-breakage
+  - phone-on-tablet
+  - no-reflow-in-split-view
+  - pointer-only-affordance
+  - empty-desert
+  - multi-window-corruption
+
+advisory_until_calibrated:
+  - feels-generic
+  - could-be-calmer
+  - copy-elegance
+  - pencil-scribble-polish
+
+rule: A claim needs observable evidence from screenshot, semantics, trace, or a named contract rule.

@@ -1,0 +1,33 @@
+screen: example-detail
+surface: ipad
+primary_task: "Understand status and take the next required action"
+size_class: regular
+required_states:
+  - loading
+  - populated
+  - empty
+  - error
+  - offline
+  - split-view-compact-column
+  - second-window
+hierarchy:
+  max_primary_ctas: 1
+  primary_cta: example.primaryAction
+  chrome: sidebar-and-detail
+layout:
+  min_control_size_pt: 44
+  supports_dynamic_type: true
+  reflow_at: [split-1-3, split-1-2, split-2-3, stage-manager]
+  pointer_hover_optional: true
+  hardware_keyboard: true
+content:
+  error_must_include:
+    - plain_language_cause
+    - recovery_action
+identifiers:
+  - example.root
+  - example.sidebar
+  - example.detail
+  - example.primaryAction
+  - example.error
+  - example.empty

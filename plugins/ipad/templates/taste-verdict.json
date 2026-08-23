@@ -1,0 +1,19 @@
+{
+  "screen": "ProjectDetail",
+  "surface": "ipad",
+  "verdict": "fail",
+  "confidence": 0.93,
+  "scores": {
+    "regular_width": 1,
+    "reflow": 2,
+    "hierarchy": 3,
+    "platformFit": 1
+  },
+  "blockingFindings": [
+    {
+      "rule": "not-phone-on-tablet",
+      "evidence": "iPhone navigation stack and tab bar are stretched across iPad Pro 13. Detail work requires a push instead of a persistent sidebar.",
+      "recommendedChange": "Use sidebar+detail. Keep the iPhone stack behind a compact size-class branch, not as the iPad home."
+    }
+  ]
+}

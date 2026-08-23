@@ -5,7 +5,7 @@ axes:
   content: [empty, minimal, typical, maximum, malformed, long-strings]
   lifecycle: [first-run, loading, retry, refreshed, stale, completed]
   failure: [network, auth-expired, validation, server]
-  device: [small-phone, large-phone, ipad, mac-window]
+  device: [mac-window-small, mac-window-typical, mac-window-max]
   system: [light, dark, dynamic-type, reduced-motion, voiceover-focus]
   locale: [primary, expansion-sensitive]
   account: [anonymous, new, returning, edge-permission]

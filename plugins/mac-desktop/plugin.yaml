@@ -1,14 +1,18 @@
 id: mac-desktop
 version: 0.1.0
 kind: aidd-plugin
-summary: Autonomous native Apple UI testing. Deterministic XCTest gates. Independent explorer and taste critic. Visual inspection as sensing.
+summary: Autonomous macOS desktop UI. Windows, menus, pointer and keyboard. Not iPhone. Not iPad.
 
 extends:
   - product/frontend-testing-standards
 
+sibling_plugins:
+  - iphone
+  - ipad
+rule_vs_siblings: Passing iPhone or iPad gates does not pass Mac.
+
 surfaces:
   - macos
-  - ios-simulator
 
 machines:
   builder: Implements UI. Never grades itself.

@@ -2,7 +2,9 @@
 
 No humans in routine frontend testing. Humans author taste. Machines inspect every render.
 
-This plugin extends `frontend-testing-standards` for native Apple surfaces: macOS SwiftUI/AppKit, and iOS Simulator when the same product ships there.
+This plugin extends `frontend-testing-standards` for macOS SwiftUI/AppKit: windows, menus, pointer and keyboard.
+
+If the product also ships iPhone or iPad, copy `plugins/iphone/` and `plugins/ipad/`. Do not reuse this plugin. Those surfaces have different size classes, chrome, and cardinal sins.
 
 ## The split
 

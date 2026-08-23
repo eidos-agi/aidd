@@ -1,0 +1,42 @@
+id: iphone
+version: 0.1.0
+kind: aidd-plugin
+summary: Autonomous iPhone UI. Compact size class. Thumb reach. Navigation stack and tab bar. Not a shrunk iPad.
+
+extends:
+  - product/frontend-testing-standards
+
+surfaces:
+  - iphone
+  - ios-simulator-iphone
+
+sibling_plugins:
+  - ipad
+  - mac-desktop
+rule_vs_siblings: Passing iPad or Mac gates does not pass iPhone. Phone-on-tablet and tablet-on-phone are both fails.
+
+machines:
+  builder: Implements UI. Never grades itself.
+  explorer: Drives compact devices. Rotates. Interrupts. Minimizes traces.
+  critic: Independent judge of compact hierarchy, reach, and interruption recovery.
+
+oracle_rule: The builder does not approve its own UI.
+
+hard_gates_file: gates/mechanical.yaml
+product_invariants_file: gates/product-design.yaml
+critic_file: gates/critic.yaml
+
+candidate_may_not_edit:
+  - gates/
+  - critic/rubric.yaml
+  - corpus/approved/
+  - held-out baselines in plugin-evals/iphone/
+
+skills:
+  - /aidd-iphone
+
+humans_still:
+  - New interaction models
+  - New component primitives
+  - New product taste
+  - Promotion

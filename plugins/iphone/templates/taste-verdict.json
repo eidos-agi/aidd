@@ -1,0 +1,19 @@
+{
+  "screen": "Checkout",
+  "surface": "iphone",
+  "verdict": "fail",
+  "confidence": 0.91,
+  "scores": {
+    "reach": 2,
+    "hierarchy": 3,
+    "platformFit": 2,
+    "accessibility": 4
+  },
+  "blockingFindings": [
+    {
+      "rule": "thumb-reach",
+      "evidence": "Pay Now sits in the navigation bar trailing slot, outside the thumb zone on iPhone SE portrait",
+      "recommendedChange": "Move Pay Now to a bottom pinned bar. Keep Cancel as a leading nav text action."
+    }
+  ]
+}

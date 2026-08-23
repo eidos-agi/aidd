@@ -1,0 +1,21 @@
+version: 1
+surface: ipad
+composition:
+  - Regular-width structure is visible at first view
+  - Not a stretched iPhone stack
+  - Empty canvas has meaning
+reflow:
+  - 1/3 Split View still does the job
+  - Stage Manager window does not clip the CTA
+  - Compact column obeys compact rules
+input:
+  - Pointer hover is optional
+  - Keyboard shortcut hits the primary action
+  - Drag and drop where the job moves objects
+windows:
+  - Second window does not double-submit
+  - Shared state remains coherent
+forbidden_looks:
+  - iPhone tab bar as iPad root
+  - Compact sheet for every inspector
+  - 44pt button in a desert

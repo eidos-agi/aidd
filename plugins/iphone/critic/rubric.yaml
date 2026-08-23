@@ -1,0 +1,11 @@
+version: 1
+surface: iphone
+dimensions:
+  reach: Primary action is thumb-reachable in compact portrait.
+  hierarchy: One clear primary action. No iPad chrome.
+  density: Compact, not sparse-tablet and not dashboard-crammed.
+  safe_area: Nothing under island, status bar, or home indicator.
+  interruption: State survives banners and auth sheets.
+  platform_fit: Tab bar and stack, not sidebar.
+  accessibility: Contrast, labels, Dynamic Type, 44pt.
+  consistency: Same job as other iPhone screens, not a scaled iPad page.

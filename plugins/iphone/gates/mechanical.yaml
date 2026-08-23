@@ -1,0 +1,43 @@
+version: 1
+tier: 1
+enforcement: blocking
+model_required: false
+surface: iphone
+
+hard_gates:
+  - id: touch-target
+    requirement: "Every interactive target is at least 44 by 44 points."
+  - id: no-clip-overlap
+    requirement: "No text clips, overlaps, or leaves the screen bounds on SE-class and Pro Max-class phones."
+  - id: contrast
+    requirement: "Text contrast meets the product threshold in light and dark."
+  - id: appearance
+    requirement: "The screen works in light and dark appearance."
+  - id: dynamic-type
+    requirement: "Core flows remain usable at standard and accessibility XL. Text wraps. It does not truncate into an unusable control."
+  - id: a11y-semantics
+    requirement: "Interactive controls have accessibility identifiers, labels, and traits. performAccessibilityAudit() is in the suite."
+  - id: required-states
+    requirement: "Loading, empty, error, success, offline, and permission-denied exist where the screen's job requires them."
+  - id: destructive-friction
+    requirement: "A destructive operation has confirmation or undo."
+  - id: keyboard-primary
+    requirement: "The compact keyboard cannot hide the active input or its primary completion action."
+  - id: identifier-stability
+    requirement: "Asserted controls use stable accessibility identifiers, not visible strings or coordinates."
+  - id: compact-width
+    requirement: "Primary chrome is compact-appropriate. No sidebar, split view, or inspector column as the home layout."
+  - id: safe-area
+    requirement: "Content and controls do not sit under the Dynamic Island or notch, status bar, or home indicator."
+  - id: thumb-reach
+    requirement: "The primary action on a compact-portrait task screen is in the reachable lower region unless the screen contract declares an exception."
+  - id: orientation
+    requirement: "The job still completes in portrait. Landscape does not clip, trap the keyboard over the CTA, or drop the primary action."
+  - id: system-back
+    requirement: "Interactive pop and edge-swipe back work unless the screen is a declared immersive exception."
+  - id: interruption-survival
+    requirement: "A banner, Face ID sheet, or app-switch does not discard entered form data."
+  - id: not-ipad-chrome
+    requirement: "Pointer-only targets, trailing empty split panes, and regular-width sidebars fail on iPhone."
+
+rule: A high critic score never overrides a mechanical miss. A green iPad suite never overrides an iPhone miss.

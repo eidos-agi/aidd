@@ -1,0 +1,22 @@
+version: 1
+surface: iphone
+
+axes:
+  content: [empty, minimal, typical, maximum, malformed, long-strings]
+  lifecycle: [first-run, loading, retry, refreshed, stale, completed]
+  failure: [network, auth-expired, validation, server]
+  device: [iphone-se, iphone-pro, iphone-pro-max]
+  orientation: [portrait, landscape]
+  system: [light, dark, dynamic-type-xl, reduced-motion, voiceover-focus, low-power]
+  interruption: [none, banner, faceid, app-switch]
+  locale: [primary, expansion-sensitive]
+  account: [anonymous, new, returning, edge-permission]
+
+entry:
+  - deep links
+  - launch arguments
+  - seeded backend fixtures
+  - rotate
+  - simulate_interruption
+
+rule: The explorer creates these states. The critic judges them. The suite keeps them. iPad states do not live here.

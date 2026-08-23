@@ -1,0 +1,24 @@
+version: 1
+tier: 2
+enforcement: blocking-when-declared
+surface: ipad
+
+invariants:
+  - id: one-primary-action
+    requirement: "A transactional or task-completion surface has exactly one dominant primary action."
+  - id: first-view-task
+    requirement: "In regular width, the primary task is clear without a phone-sized hero stacked in a desert of whitespace."
+  - id: sidebar-not-tab-bar
+    requirement: "Top-level jobs use a sidebar unless the product is a declared utility. A stretched iPhone tab bar is a fail."
+  - id: popover-for-inspect
+    requirement: "Inspectors in regular width are popovers or split columns, not compact full-screen sheets by default."
+  - id: empty-canvas
+    requirement: "A large empty state has meaning and a recovery action. Not a 44pt button in a desert."
+  - id: color-not-alone
+    requirement: "Every status color is paired with text, iconography, or another non-color cue."
+  - id: error-near-field
+    requirement: "A form reports errors near the field and preserves entered data."
+  - id: drag-and-drop
+    requirement: "Where the job moves objects, drag and drop works with touch and pointer."
+  - id: copy-voice
+    requirement: "Labels are concise. Verbs are specific. Destructive actions are unmistakable."

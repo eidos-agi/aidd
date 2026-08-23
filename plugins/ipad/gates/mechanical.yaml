@@ -1,0 +1,45 @@
+version: 1
+tier: 1
+enforcement: blocking
+model_required: false
+surface: ipad
+
+hard_gates:
+  - id: touch-target
+    requirement: "Every interactive target is at least 44 by 44 points, including when a pointer is attached."
+  - id: no-clip-overlap
+    requirement: "No text clips, overlaps, or leaves the window bounds at 1/3 Split View, full screen, and Stage Manager frames."
+  - id: contrast
+    requirement: "Text contrast meets the product threshold in light and dark."
+  - id: appearance
+    requirement: "The screen works in light and dark appearance."
+  - id: dynamic-type
+    requirement: "Core flows remain usable at standard and accessibility XL in regular and compact-split columns."
+  - id: a11y-semantics
+    requirement: "Interactive controls have accessibility identifiers, labels, and traits. performAccessibilityAudit() is in the suite."
+  - id: required-states
+    requirement: "Loading, empty, error, success, offline, and permission-denied exist where the screen's job requires them."
+  - id: destructive-friction
+    requirement: "A destructive operation has confirmation or undo."
+  - id: keyboard-primary
+    requirement: "Software and hardware keyboards cannot hide the active input or its primary completion action."
+  - id: identifier-stability
+    requirement: "Asserted controls use stable accessibility identifiers, not visible strings or coordinates."
+  - id: not-phone-on-tablet
+    requirement: "A compact iPhone layout stretched to fill iPad is a fail. Regular width must use a regular-width structure."
+  - id: regular-width-home
+    requirement: "In wR, top-level jobs use sidebar+detail or an equivalent two-pane pattern, unless the product is a declared utility."
+  - id: split-view-reflow
+    requirement: "The current job remains usable at Split View 1/3, 1/2, and 2/3. Reflow is required. Launch-size is not the test."
+  - id: stage-manager-window
+    requirement: "The app remains usable in a non-fullscreen Stage Manager window."
+  - id: multi-window-integrity
+    requirement: "If the product is document-based, two windows do not corrupt shared state or double-submit."
+  - id: pointer-and-touch
+    requirement: "Hover may enhance. It may not be the only affordance. Touch remains complete."
+  - id: hardware-keyboard
+    requirement: "Core jobs are completable with a hardware keyboard. Primary actions have shortcuts where a Mac analog would."
+  - id: compact-column
+    requirement: "When Split View makes a column compact, that column obeys compact rules and does not clip or drop the job."
+
+rule: A high critic score never overrides a mechanical miss. A green iPhone suite never overrides an iPad miss.

@@ -1,0 +1,24 @@
+version: 1
+surface: iphone
+composition:
+  - First-view task obvious on a 390pt portrait
+  - Primary CTA in the lower reachable region
+  - No competing filled buttons
+  - No empty split pane
+reach:
+  - Thumb can hit the primary action
+  - Destructive action has friction without living in a far corner by accident
+safe_area:
+  - Nothing under Dynamic Island or home indicator
+  - Landscape avoids notch clipping
+keyboard:
+  - Focused field and CTA remain visible
+  - Compact landscape still submits
+interruption:
+  - Form values survive a banner and an app-switch
+back:
+  - Edge swipe pops
+forbidden_looks:
+  - Sidebar
+  - Inspector column
+  - Pointer hover as the only affordance

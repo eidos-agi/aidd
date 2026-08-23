@@ -33,8 +33,12 @@ See `contract.yaml`. Minimum:
 
 ## Current plugins
 
-| Plugin | Surface | Job |
+| Plugin | Surface | Cardinal sin |
 | --- | --- | --- |
-| `mac-desktop` | macOS apps, iOS simulator | Autonomous native UI testing, taste critic, visual inspection |
+| `mac-desktop` | macOS windows, menus, pointer | Treating Mac as a big iPad |
+| `iphone` | Compact iPhone | iPad chrome crammed into 390pt |
+| `ipad` | Regular-width iPad | Stretched iPhone layout |
+
+These are siblings. A green suite on one is inadmissible evidence on the others. Copy only the surfaces the product ships.
 
 Add a plugin when a new surface needs its own sensing, not when a product wants a different folder name.

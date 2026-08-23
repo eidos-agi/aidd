@@ -3,7 +3,7 @@
 Aidd has plugins. Legs are universal. Plugins are optional surfaces.
 
 1. Read `plugins/README.md` and `plugins/contract.yaml`.
-2. If the product has a native Apple UI, copy `plugins/mac-desktop/`.
+2. Copy the plugins for surfaces the product actually ships. Mac → `plugins/mac-desktop/`. iPhone → `plugins/iphone/`. iPad → `plugins/ipad/`. Do not collapse Apple into one plugin.
 3. Do not invent a plugin to rename a leg. Complexity reduction is `simplicity-standards`, not a plugin.
 4. A plugin may extend a leg. It may not weaken one.
 5. Put held-out plugin fixtures in `plugin-evals/<id>/`.

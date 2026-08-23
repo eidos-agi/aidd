@@ -23,4 +23,4 @@ The product repo holds the contract the agent builds against. A promotion contro
 
 Templates for each leg live under `product/` in this forge. Copy them. Fill them. Do not invent a parallel folder named `tests/` that the candidate is allowed to rewrite.
 
-Plugins live under `plugins/`. Native Apple UI copies `plugins/mac-desktop/`. See `layout/plugins.md`.
+Plugins live under `plugins/`. Copy the Apple plugin that matches the shipped surface: `mac-desktop`, `iphone`, `ipad`. See `layout/plugins.md`.
